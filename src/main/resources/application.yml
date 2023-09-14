@@ -1,0 +1,29 @@
+##password ?? x
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+
+  jpa:
+    database: mysql
+    ## Dialect 설정
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: create
+
+    properties:
+      hibernate:
+        dialect:
+          storage_engine: innodb
+
+        ## 하이버네이트가 실행하는 모든 SQL문을 콘솔로 출력
+        show_sql: true
+
+        ## 콘솔에 출력되는 JPA 실행 쿼리를 가독성있게 표현한다
+        format_sql: true
+
+        ##디버깅이 용이하도록 SQL문 이외에 추가적인 정보 출력
+        use_sql_comments: true
+
+
+
+

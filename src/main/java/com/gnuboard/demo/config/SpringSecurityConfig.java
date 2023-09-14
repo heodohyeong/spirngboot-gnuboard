@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -25,9 +26,18 @@ public class SpringSecurityConfig {
                             headersConfig.frameOptions(frameOptionsConfig -> frameOptionsConfig.disable())
                         )
                 //.headers(HeadersConfigurer::disable)
-                .formLogin((formLoginConfig) ->
-                            formLoginConfig.loginPage("/")
+                .authorizeHttpRequests(authorizeHttpRequestsConfig ->
+                                authorizeHttpRequestsConfig.requestMatchers(
+                                            new AntPathRequestMatcher("/member/login")
+                                        ,new AntPathRequestMatcher(("/h2-console/**"))
+                                ).permitAll()
+                                        .anyRequest().authenticated()
                         )
+                .formLogin((formLoginConfig) ->
+                            formLoginConfig.loginPage("/member/login")
+                        )
+
+
         ;
         return http.build();
     }

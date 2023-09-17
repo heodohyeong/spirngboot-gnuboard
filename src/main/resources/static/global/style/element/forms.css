@@ -1,0 +1,181 @@
+.input-control {
+  display: inline-block;
+  height: 45px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #666;
+  background-color: #F8F8F8;
+  border: 1px solid #ddd;
+}
+
+.input-control.is-block {
+  width: 100%;
+}
+
+.input-control.is-white {
+  background-color: #fff;
+}
+
+.input-control.is-textarea {
+  height: 100px;
+  width: 100%;
+  vertical-align: top;
+}
+
+.select-control {
+  display: inline-block;
+  height: 45px;
+  padding: 10px 40px 10px 14px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  background-position: 88% center;
+  background-image: url(/humanframe/theme/gangseo_kor/assets/image/ico/ico_select_arrow.png);
+  background-repeat: no-repeat;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+}
+
+.select-control::-ms-expand {
+  display: none;
+}
+
+.radio-control {
+  position: relative;
+  padding-left: 32px;
+}
+
+.radio-control input[type=radio] {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 27px;
+  height: 27px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.radio-control label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.radio-control label::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 7px;
+  width: 17px;
+  height: 17px;
+  border-radius: 8px;
+  background-color: #ddd;
+  z-index: 1;
+}
+
+.radio-control input[type=radio]:checked {
+  border: 1px solid #008842;
+}
+
+.radio-control input[type=radio]:checked + label::after {
+  background-color: #008842;
+}
+
+.radio-control + .radio-control {
+  margin-left: 20px;
+}
+
+.checkbox-control {
+  position: relative;
+  padding-left: 32px;
+}
+
+.checkbox-control input[type=checkbox] {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 27px;
+  height: 27px;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 1;
+  border: 1px solid #ddd;
+}
+
+.checkbox-control input[type=checkbox] + label::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  width: 27px;
+  height: 27px;
+  background-image: url(/humanframe/theme/gangseo_kor/assets/image/ico/ico_check01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.checkbox-control label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.checkbox-control input[type=checkbox]:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  width: 27px;
+  height: 27px;
+  background-image: url(/humanframe/theme/gangseo_kor/assets/image/ico/ico_check01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #008842;
+  z-index: 2;
+}
+
+.calendar-control {
+  position: relative;
+  display: inline-block;
+}
+
+.calendar-control button {
+  position: absolute;
+  right: 9px;
+  top: 10px;
+  width: 24px;
+  height: 24px;
+  background: url(/humanframe/theme/gangseo_kor/assets/image/ico/ico_calendar02.png) no-repeat center center;
+}
+
+.calendar-control .input-control {
+  padding: 12px 40px 12px 16px;
+  background-color: #fff;
+}
+
+.form-group label {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 16px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.form-group.is-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-group.is-inline + .is-inline {
+  margin-left: 10px;
+}

@@ -1,0 +1,192 @@
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  font-size: 16px;
+  padding: 0px 20px;
+  height: 45px;
+  line-height: 43px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+}
+
+.btn.is-default {
+  border: 1px solid #2C3E35;
+  background-color: #fff;
+  color: #2C3E35;
+}
+
+.btn.is-green {
+  background-color: #008842;
+  color: #fff !important;
+}
+
+.btn.is-green:hover {
+  background-color: #086036;
+}
+
+.btn.is-black {
+  background-color: #2C3E35;
+}
+
+.btn.is-black:hover {
+  background-color: #2C3E35;
+}
+
+.btn.is-gray {
+  background-color:#767676;
+  color: #fff !important;
+}
+
+.btn.is-gray:hover {
+  background-color:#767676;
+}
+
+.btn.is-outline {
+  border: 1px solid #2C3E35;
+  background-color: #fff;
+  color: #2C3E35;
+}
+
+.btn.is-middle {
+  height: 54px;
+  line-height: 53px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0px 20px;
+}
+
+.btn.is-large {
+  height: 64px;
+  line-height: 63px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0px 20px;
+}
+
+.btn.is-small {
+  height: 24px;
+  line-height: 23px;
+  font-size: 14px;
+  padding: 0px 14px;
+}
+
+.btn.ico-plus::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url(/humanframe/theme/global/assets/image/ico/ico_plus.png) no-repeat 0px 0px;
+  margin-left: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.btn.ico-minus::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: url(/humanframe/theme/global/assets/image/ico/ico_minus.png) no-repeat 0px 0px;
+  margin-left: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.btn.ico-download-white::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(/humanframe/theme/global/assets/image/ico/ico_download.png) no-repeat 0px 0px;
+  margin-left: 8px;
+  margin-top: -6px;
+  vertical-align: middle;
+}
+
+.btn.ico-download-black::after {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url(/humanframe/theme/global/assets/image/ico/ico_download_black.png) no-repeat 0px 0px;
+  margin-left: 8px;
+  margin-top: 0px;
+  vertical-align: middle;
+}
+
+.btn.ico-link-white::after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: url(/humanframe/theme/global/assets/image/ico/ico_link_white.png) no-repeat 0px 0px;
+  margin-left: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.btn.ico-link-black::after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: url(/humanframe/theme/global/assets/image/ico/ico_link_black.png) no-repeat 0px 0px;
+  margin-left: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.btn.is-w120 {
+  min-width: 120px;
+}
+
+.btn.is-w200 {
+  min-width: 200px;
+}
+
+.btn.is-fs14 {
+  font-size: 14px;
+  padding: 0px 12px;
+}
+
+.btn + .btn {
+  margin-left: 5px;
+}
+
+.btn.is-green-sh {
+  border: 1px solid #008842;
+  color: #008842;
+  padding: 0 35px;
+  background-color: #fff;
+}
+
+.btn.is-reflash {
+  border: 1px solid #ddd;
+  font-size: 16px;
+  color: #555;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  z-index: 1;
+}
+
+.btn.is-reflash::before {
+  content: '';
+  display: inline-block;
+  width: 17px;
+  height: 16px;
+  background: url(/humanframe/theme/global/assets/image/ico/ico_reflash02.png) no-repeat 0px 0px;
+  margin-right: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.ico-map {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background: url(/humanframe/theme/health/assets/image/ico/ico_map.png) no-repeat 0 0;
+}

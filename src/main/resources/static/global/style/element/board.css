@@ -1,0 +1,56 @@
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.table-responsive th, .table-responsive td {
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+.table-responsive .table {
+  width: auto;
+}
+
+.table thead th {
+  border-width: 1px 1px 2px 0px;
+  background-color: #fafafa;
+}
+
+.table thead th:last-child {
+  border-width: 1px 0px 2px 0px;
+}
+
+.table tbody td {
+  border-width: 0px 1px 1px 0px;
+}
+
+.table tbody td:last-child {
+  border-width: 0px 0px 1px 0px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  border-width: 0px 0px 1px;
+  padding: 5px 10px;
+}
+
+.table.is-border thead th {
+  border-width: 1px;
+}
+
+.table.is-border thead th:last-child {
+  border-width: 1px;
+}
+
+.table.is-border tbody td {
+  border-width: 0px 1px 1px 1px;
+}
+
+.table.is-border tbody td:last-child {
+  border-width: 0px 1px 1px 1px;
+}
+
+.table.is-center th, .table.is-center td {
+  text-align: center;
+}

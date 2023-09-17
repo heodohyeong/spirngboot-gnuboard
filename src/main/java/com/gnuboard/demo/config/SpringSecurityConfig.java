@@ -21,20 +21,24 @@ public class SpringSecurityConfig {
 
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable)
-                .headers((headersConfig) ->
+        http
+                //.csrf(AbstractHttpConfigurer::disable)
+                /*.headers((headersConfig) ->
                             headersConfig.frameOptions(frameOptionsConfig -> frameOptionsConfig.disable())
-                        )
+                        )*/
                 //.headers(HeadersConfigurer::disable)
+                .headers(headersConfigurer -> headersConfigurer.frameOptions(frameOptionsConfig -> frameOptionsConfig.sameOrigin()))
                 .authorizeHttpRequests(authorizeHttpRequestsConfig ->
                                 authorizeHttpRequestsConfig.requestMatchers(
-                                            new AntPathRequestMatcher("/member/login")
-                                        ,new AntPathRequestMatcher(("/h2-console/**"))
-                                ).permitAll()
-                                        .anyRequest().authenticated()
+                                         //   new AntPathRequestMatcher("/member/login")
+                                       //,new AntPathRequestMatcher("/h2-console/**")
+                                        new AntPathRequestMatcher("/**")
+                                        //,new AntPathRequestMatcher("/index")
+                                ).permitAll().anyRequest().authenticated()
                         )
+                //.httpBasic(withDefaults())
                 .formLogin((formLoginConfig) ->
-                            formLoginConfig.loginPage("/member/login")
+                            formLoginConfig.loginPage("/member/login").defaultSuccessUrl("/index")
                         )
 
 

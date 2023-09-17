@@ -1,0 +1,156 @@
+.tab-wrap {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.tab-wrap.is-tabs {
+  margin-bottom: 0;
+}
+
+.tab-wrap li {
+  float: left;
+  width: 20%;
+}
+
+.tab-wrap li a {
+  display: block;
+  height: 60px;
+  padding: 15px 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #444;
+  border: 1px solid #ddd;
+  margin-left: -1px;
+}
+
+.tab-wrap li:nth-child(5n+1) a {
+  margin-left: 0px;
+}
+
+.tab-wrap li:nth-child(n+6) a {
+  margin-top: -1px;
+}
+
+.tab-wrap li.active a {
+  background-color: #008842;
+  border: 1px solid #008842;
+  color: #fff;
+  font-weight: 700;
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tab-wrap.is-col2 li {
+  width: 50%;
+}
+
+.tab-wrap.is-col2 li:nth-child(n+3) a {
+  margin-top: -1px;
+}
+
+.tab-wrap.is-col2 li:nth-child(3) a {
+  margin-left: 0;
+}
+
+.tab-wrap.is-col3 li {
+  width: 33.333333%;
+}
+
+.tab-wrap.is-col3 li:nth-child(n+4) a {
+  margin-top: -1px;
+}
+
+.tab-wrap.is-col3 li:nth-child(4) a {
+  margin-left: 0;
+}
+
+.tab-wrap.is-col4 li {
+  width: 25%;
+}
+
+.tab-wrap.is-col4 li:nth-child(n+5) a {
+  margin-top: -1px;
+}
+
+.tab-wrap.is-col4 li:nth-child(5) a {
+  margin-left: 0;
+}
+
+.tab-depth {
+  padding: 10px 0px;
+  border-bottom: 1px solid #ddd;
+  height: 50px;
+  margin-bottom: 40px;
+}
+
+.tab-depth::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.tab-depth li {
+  position: relative;
+  float: left;
+  margin-right: 16px;
+}
+
+.tab-depth li.active {
+  color: #333;
+}
+
+.tab-depth li.active::after {
+  display: block;
+}
+
+.tab-depth li::after {
+  content: '';
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  z-index: 1;
+  height: 3px;
+  background-color: #008842;
+}
+
+.tab-depth li a {
+  display: block;
+  font-size: 16px;
+  color: #666;
+  line-height: 28px;
+}
+
+.sort-wrap {
+  margin-left: -8px;
+  overflow: hidden;
+}
+
+.sort-wrap li {
+  width: 20%;
+  float: left;
+  margin-bottom: 8px;
+}
+
+.sort-wrap li a {
+  display: block;
+  background-color: #F4F4F4;
+  border: 1px solid #F4F4F4;
+  height: 43px;
+  line-height: 42px;
+  font-size: 16px;
+  color: #444;
+  margin-left: 8px;
+  text-align: center;
+}
+
+.sort-wrap li.active a {
+  border: 1px solid #009f9d;
+  background: #fff;
+  font-weight: 700;
+}
+
+.sort-wrap + .board-list-wrap {
+  margin-top: 40px;
+}

@@ -1,0 +1,43 @@
+.board-wrap .board-list-wrap ul.board-list.list-head {
+  background-color: #F4F4F4;
+  border-color: #CC1462;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+}
+
+.board-view-wrap {
+  border-color: #CC1462;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+}
+
+.board-write-wrap {
+  border-color: #CC1462;
+  border-style: solid;
+  border-width: 2px 0 0 0;
+}
+
+.board-btn-wrap .btn.is-primary {
+  background-color: #CC1462;
+  color: #fff !important;
+}
+
+.board-btn-wrap .btn.is-primary {
+  background-color: #CC1462;
+  color: #fff !important;
+}
+.board-btn-wrap .btn.is-black {
+  background-color: #CC1462;
+  color: #fff !important;
+}
+
+.board-search-wrap .btn {
+  background-color: #CC1462;
+  color: #fff !important;
+}
+
+.board-list-head .board-search-wrap .input-box button {
+  background-color: #CC1462;
+  border: 0;
+  color: #fff !important;
+}

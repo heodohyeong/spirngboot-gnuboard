@@ -1,0 +1,165 @@
+.tab-wrap{
+    overflow:hidden;
+    margin-bottom:40px;
+    &.is-tabs{
+        margin-bottom:0;
+    }
+    li{
+        float:left;
+        width:20%;        
+        a{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:60px;
+            padding:15px 10px;
+            text-align:center;
+            font-size:16px;
+            color:#444;
+            border:1px solid #ddd;
+            margin-left:-1px;
+            word-break:keep-all;
+            @include respond('tablet-default') {               
+                height:50px;
+                padding:12px 10px;
+                font-size:14px;
+                word-break:keep-all;
+            }            
+        }               
+        &:nth-child(5n+1) a{
+            margin-left:0px
+        }
+        &:nth-child(n+6) a{
+            margin-top:-1px
+        }
+        &.active a{
+            background-color:#008842;
+            border:1px solid #008842;
+            color:#fff;
+            font-weight:700;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        @include respond('mobile-default') {
+            a{
+                margin-left:0px !important;
+            }
+            &:nth-child(even) a{
+                margin-left:-1px !important;
+            } 
+            width:50% !important; 
+            float:left !important;     
+            &:nth-child(n+3) a{
+                margin-top:-1px
+            }      
+            &:nth-child(n+6) a{
+                margin-top:-1px
+            }
+        }
+    }
+    &.is-col2 li{
+        width:50%;
+        &:nth-child(n+3) a{
+            margin-top:-1px
+        }
+        &:nth-child(3) a{
+            margin-left:0;
+        }
+    }
+    &.is-col3 li{
+        width:33.333333%;
+        &:nth-child(n+4) a{
+            margin-top:-1px
+        }
+        &:nth-child(4) a{
+            margin-left:0;
+        }
+    }
+    &.is-col4 li{
+        width:25%;
+        &:nth-child(n+5) a{
+            margin-top:-1px
+        }
+        &:nth-child(5) a{
+            margin-left:0;
+        }
+    }
+}
+.tab-depth{    
+    padding:10px 0px;
+    border-bottom:1px solid #ddd;
+    height:50px;
+    margin-bottom:40px;
+    &::after{
+        content:'';
+        display:block;
+        clear:both;        
+    }
+    li{
+        position:relative;
+        float:left;
+        margin-right:16px;
+        &.active{
+            color:#333;
+        }
+        &.active::after{
+            display:block;
+        }
+        &::after{            
+            content:'';
+            display:none;
+            position:absolute;
+            left:0;
+            right:0;
+            bottom:-12px;
+            z-index:1;
+            height:3px;
+            background-color:#008842;
+        }
+        a{
+            display:block;
+            font-size:16px;
+            color:#666;
+            line-height:28px;
+        }
+    }
+}
+
+.sort-wrap{
+    margin-left:-8px;
+    overflow:hidden;
+    li{
+        width:20%;
+        float:left;
+        margin-bottom:8px;
+        @include respond('mobile-large') {
+            width:33.333333%;
+        }
+        @include respond('mobile-default') {
+            width:50%;
+        }
+        a{
+            display:block;
+            background-color:#F4F4F4;
+            border:1px solid #F4F4F4;
+            height:43px;
+            line-height:42px;
+            font-size:16px;
+            color:#444;
+            margin-left:8px;
+            text-align:center;
+            @include respond('mobile-large') {
+                font-size:14px;
+                height:33px;
+                line-height:32px;
+            }
+        }
+        &.active a{
+            border:1px solid #009f9d;
+            background:#fff;
+            font-weight:700;
+        }
+    }
+    + .board-list-wrap{
+        margin-top:30px;
+    }
+}

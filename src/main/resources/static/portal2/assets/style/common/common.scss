@@ -1,0 +1,72 @@
+/* common element : heading, list, table etc */
+.box-wrap {
+    background-color:#F0F5FB;
+    border-radius:0.8rem;
+    padding:2.0rem 3.0rem;
+    color:#222222;
+    font-size:1.8rem;
+    font-weight:400;
+}
+.h4 {
+    display:block;
+    position:relative;
+    margin:5.0rem 0 3.0rem 0;
+    padding:0 0 0 2.6rem;    
+    color:#191919;
+    font-size:2.0rem;
+    font-weight:500;
+    line-height:1.25;
+    &::before{
+        content:"";
+        display:inline-block;
+        overflow:hidden;
+        position:absolute;
+        left:0;
+        top:0.4rem;
+        width:1.8rem;
+        height:1.8rem;        
+        background-image:url(/humanframe/theme/portal2/assets/image/icon/ico_h4.svg);
+        background-repeat:no-repeat;
+        background-position:0 0;
+        background-size:100% auto;
+        background-color:transparent;
+    }
+    
+}
+.h5 {
+    display:block;
+    position:relative;
+    margin:2.0rem 0 1.0rem 0;
+    padding:0 0 0 1.3rem;
+    color:#191919;
+    font-size:1.6rem;        
+    font-weight:400;
+    line-height:1.25;
+    &::before{
+        content:"";
+        display:inline-block;
+        overflow:hidden;
+        position:absolute;
+        left:0;
+        top:0.8rem;
+        width:5px;
+        height:5px;
+        background-color:#354458;
+        border-radius:50%;
+    }
+    &::after{
+        display:none;
+    }
+}
+
+.h5-content{
+    margin-left:1.7rem;
+}
+
+.demo-text {
+    display:block;
+    margin:6.0rem auto 0;
+    text-align:center;
+    font-size:1.8rem;
+    color:#DDDDDD;
+}

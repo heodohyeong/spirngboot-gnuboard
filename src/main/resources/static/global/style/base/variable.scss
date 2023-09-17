@@ -1,0 +1,116 @@
+$breakpoints: (
+    'mobile-small': 375px,
+    'mobile-default': 480px,
+    'mobile-large': 780px,
+    'tablet-default': 1024px,
+    'desktop-small': 1280px    
+) !default;
+
+$fontSize: (
+    'mini': 11px,  //11
+    'small': 12px,  //12
+    'middle': 14px, //14
+    'default': 16px, //16
+    'large': 18px,  //18
+    'x-large': 22px,  //22
+    'h1': 32px,  //32 
+    'h2': 28px,  //28 
+    'h3': 24px,  //24 
+    'h4': 22px,  //22
+) !default;
+
+$line: (
+    '1': 1,
+    '2': 2,
+    '3': 3  
+) !default;
+
+$fontColor: (
+    'default': #555,
+    'white': #fff,
+) !default;
+
+$bgColor: (
+    'default': #222,
+    'white': #fff        
+) !default;
+
+$fontWeight: (
+    '300': 300,
+    '700': 700
+) !default;
+
+$lineHeight: (
+    'small': 12px,  //12
+    'middle': 14px, //14
+    'default': 20px, //20
+    'large': 24px //20  
+) !default;
+
+$borderRadius: (
+    'small': 4px, 
+    'middle': 8px,
+    'default': 6px,   
+    'large': 10px,
+    'x-large': 50%  
+) !default;
+
+.text-align{
+    &.is-left{
+        text-align:left !important;
+    }
+    &.is-right{
+        text-align:right !important;
+    }
+    &.is-center{
+        text-align:center !important;
+    }
+}
+.float{
+    &.is-left{
+        float:left !important;
+    }
+    &.is-right{
+        float:right !important;
+    }
+    &.is-clear{
+        clear:both !important;
+    }
+}
+
+.text-dot{
+    display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    &.is-two{
+        display:-webkit-box;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        white-space:normal;
+    }
+}
+
+.font-color{
+    &.is-default{
+        color:#555 !important;
+    }
+    &.is-white{
+        color:#fff !important;
+    }
+    &.is-red{
+        color:#E22126 !important;;
+    }
+    &.is-blue{
+        color:#415DBF !important;;
+    }
+    &.is-green{
+        color:#008842 !important;;
+    }
+    &.is-org{
+        color:#E56000 !important;;
+    }
+    &.is-black{
+        color:#222222 !important;;
+    }
+}

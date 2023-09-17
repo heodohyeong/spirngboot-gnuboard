@@ -14,7 +14,7 @@ public class LoginController {
     public String login(){
 
 
-        return "login";
+        return "member/login";
     }
 
 

@@ -1,0 +1,128 @@
+/* info type */
+.info-type01 {
+  border: 1px solid #ddd;
+  background-position: 42px center;
+  background-repeat: no-repeat;
+  background-color: #F9F9F9;
+  background-image: url(/humanframe/theme/gangseo_kor/assets/image/content/img_hand.png);
+  padding: 30px 50px 30px 140px;
+  color: #222;
+  line-height: 28px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.info-type02 {
+  border: 1px solid #ddd;
+  background-color: #F9F9F9;
+  background-repeat: no-repeat;
+  padding: 30px;
+  color: #222;
+  line-height: 28px;
+  border-radius: 8px;
+  margin-bottom: 60px;
+}
+
+.info-type02 a {
+  color: #E56000;
+}
+
+.info-type02 a.info-link {
+  padding-right: 20px;
+  background: url(/humanframe/theme/gangseo_kor/assets/image/ico/ico_link01.png) no-repeat right center;
+}
+
+.info-type02.is-ico {
+  padding: 30px 30px 30px 80px;
+  background-position: 30px center;
+  background-image: url(/humanframe/theme/gangseo_kor/assets/image/ico/ico_notice.png);
+}
+
+/* title type */
+.text-type01 .tab-title {
+  font-size: 30px;
+  font-weight: 500;
+  color: #008842;
+  margin-bottom: 30px;
+}
+
+.text-type01 .h5 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #222;
+  padding-left: 25px;
+  margin-bottom: 30px;
+  background: url(/humanframe/theme/gangseo_kor/assets/image/ico/bul_h4.png) no-repeat 0px 5px;
+}
+
+.text-type01 .h6 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #222;
+}
+
+.text-type01 .dot-type {
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.text-type01 .dot-type > li {
+  position: relative;
+  padding: 0px 0px 0px 10px;
+  font-size: 18px !important;
+  color: #555;
+}
+
+.text-type01 .dot-type > li::after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 13px;
+  width: 4px;
+  height: 4px;
+  background-color: #008842;
+}
+
+.text-type01 .dot-type > li > .hyphen-type {
+  margin-top: 0px;
+}
+
+.text-type01 .dot-type > li > .hyphen-type li + li {
+  margin-top: 0;
+}
+
+.text-type01 .dot-type > li + li {
+  margin-top: 10px;
+}
+
+.text-type01 .dot-type + .h6 {
+  margin-top: 30px;
+}
+
+.text-type01 .hyphen-type {
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.text-type01 .hyphen-type > li {
+  position: relative;
+  padding: 0px 0px 0px 10px;
+  font-size: 18px !important;
+  color: #555;
+}
+
+.text-type01 .hyphen-type > li::after {
+  content: '-';
+  position: absolute;
+  left: 0px;
+  top: -2px;
+  background-color: transparent;
+}
+
+.text-type01 .hyphen-type > li + li {
+  margin-top: 10px;
+}
+
+.text-type01 + .text-type01 {
+  margin-top: 60px;
+}

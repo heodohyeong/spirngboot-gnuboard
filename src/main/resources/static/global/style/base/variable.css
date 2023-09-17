@@ -1,0 +1,54 @@
+.text-align.is-left {
+  text-align: left !important;
+}
+.text-align.is-right {
+  text-align: right !important;
+}
+.text-align.is-center {
+  text-align: center !important;
+}
+
+.float.is-left {
+  float: left !important;
+}
+.float.is-right {
+  float: right !important;
+}
+.float.is-clear {
+  clear: both !important;
+}
+
+.text-dot {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-dot.is-two {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+.font-color.is-default {
+  color: #555 !important;
+}
+.font-color.is-white {
+  color: #fff !important;
+}
+.font-color.is-red {
+  color: #E22126 !important;
+}
+.font-color.is-blue {
+  color: #415DBF !important;
+}
+.font-color.is-green {
+  color: #008842 !important;
+}
+.font-color.is-org {
+  color: #E56000 !important;
+}
+.font-color.is-black {
+  color: #222222 !important;
+}

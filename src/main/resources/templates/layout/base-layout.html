@@ -2,17 +2,103 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<head th:replace="layout/config :: ConfigFragment"></head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-<body>
-<!--Header 영역을 참조합니다.-->
-<header th:replace="layout/header :: HeaderFragment"></header>
+    <!-- global common -->
+    <link th:inline="css" th:href="@{/global/style/style.css}" rel="stylesheet">
+    <script th:inline="javascript" type="text/javascript" th:src="@{/global/vendor/jquery/jquery-1.12.4.min.js}"></script>
+    <!--<script type="text/javascript" src="/humanframe/global/assets/vendor/jquery/jquery-2.2.2.min.js"></script>-->
 
-<!--Content 내용 영역을 참조합니다-->
-<th:block layout:fragment="Content"></th:block>
+    <!-- theme -->
+    <script th:inline="javascript" type="text/javascript" th:src="@{/portal2/assets/script/layout.js}"></script>
+    <link th:inline="css" th:href="@{/portal2/assets/style/style.css}" rel="stylesheet"/>
+    <link th:inline="css" th:href="@{/portal2/assets/style/page/main.css}" rel="stylesheet"/>
+    <link th:inline="css" th:href="@{/portal2/assets/style/page/content.css}" rel="stylesheet"/>
+    <link th:inline="css" th:href="@{/portal2/assets/style/page/member.css}" rel="stylesheet"/>
+    <link th:inline="css" th:href="@{/portal2/assets/style/common/board-new.css}" rel="stylesheet"/>
+    <link th:inline="css" th:href="@{/portal2/assets/style/common/search.css}" rel="stylesheet"/>
 
-<!--Footer 영역을 참조합니다.-->
-<footer th:replace="layout/footer :: FooterFragment"></footer>
+    <!-- main -->
+    <script th:inline="javascript" type="text/javascript" th:src="@{/global/vendor/swiper/swiper.js}"></script>
+    <link th:inline="css" rel="stylesheet" th:href="@{/global/vendor/swiper/swiper.css}">
+    <link th:inline="css" rel="stylesheet" th:href="@{/portal2/assets/style/page/main.css}">
+
+
+    <!--[if lt IE 9]>
+    <script th:inline="javascript" type="text/javascript" th:src="@{/global/vendor/html5shiv.min.js}"></script>
+    <script th:inline="javascript" type="text/javascript" th:src="@{/global/vendor/respond.min.js}"></script>
+    <![endif]-->
+
+</head>
+
+<body class="sub">
+    <div id="skipnav">
+        <a href="#gnb">주메뉴 바로가기</a>
+        <a href="#container">본문 바로가기</a>
+    </div>
+
+    <div class="wrapper">
+        <header th:replace="~{layout/header :: HeaderFragment}"></header>
+        <main class="container" id="container">
+            <!-- navi 영역   -->
+            <!-- navi 영역   -->
+
+            <th:block th:switch="${request.requestURI} == '/' ? 'index' : ${request.requestURI}">
+                <th:block th:case="index">
+                    <!--  index 일경우-->
+                    <th:block layout:fragment="Content"></th:block>
+                </th:block>
+                <th:block th:case="defaultSearch">
+                    <!--  기본검색-->
+                    <div class="inner search-container">
+                        <th:block layout:fragment="Content"></th:block>
+                    </div>
+                </th:block>
+                <th:block th:case="*">
+                    <!--         -->
+                    <div class="inner sub-body" id="subBody">
+                        <th:block th:if="${#strings.replace(request.requestURI,'/','')} == 'member'">
+                            <!-- aside -->
+                            <!-- aside -->
+                            <div class="sub-content-wrap" id="content">
+                        </th:block>
+
+
+                        <th:block th:if="${#strings.replace(request.requestURI,'/','')} != 'member'">
+                            <div class="sub-content-header">
+                                <h3 class="title-content">
+                                    제목
+                                </h3>
+                            </div>
+                        </th:block>
+
+                        <th:block layout:fragment="Content"></th:block>
+
+                        <th:block th:if="${#strings.replace(request.requestURI,'/','')} != 'member'">
+                                <!-- ccl , 댓글 등  -->
+                        </th:block>
+
+
+                        <th:block th:if="${#strings.replace(request.requestURI,'/','')} == 'member'">
+                            </div>
+                        </th:block>
+                    </div>
+                </th:block>
+            </th:block>
+        </main>
+    </div>
+
+    <!--Header 영역을 참조합니다.-->
+
+
+    <!--Content 내용 영역을 참조합니다-->
+
+
+    <!--Footer 영역을 참조합니다.-->
+    <footer th:replace="~{layout/footer :: FooterFragment}"></footer>
 
 </body>
 </html>

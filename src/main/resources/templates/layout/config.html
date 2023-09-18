@@ -12,7 +12,7 @@
     <!--<script type="text/javascript" src="/humanframe/global/assets/vendor/jquery/jquery-2.2.2.min.js"></script>-->
 
     <!-- theme -->
-    <script type="text/javascript" src="/humanframe/theme/portal2/assets/script/layout.js"></script>
+    <script th:inline="javascript" type="text/javascript" th:src="@{/portal2/script/layout.js}"></script>
     <script th:inline="javascript" type="text/javascript" th:src="@{/portal2/script/layout.js}"></script>
     <link th:inline="css" th:href="@{/portal2/style/style.css}" rel="stylesheet"/>
     <link th:inline="css" th:href="@{/portal2/style/page/main.css}" rel="stylesheet"/>
@@ -21,17 +21,13 @@
     <link th:inline="css" th:href="@{/portal2/style/common/board-new.css}" rel="stylesheet"/>
     <link th:inline="css" th:href="@{/portal2/style/common/search.css}" rel="stylesheet"/>
 
-    <!-- 퍼블리싱 ia와 연동 임시 파일 -->
-    <script type="text/javascript" src="/humanframe/theme/portal2/assets/script/_ia_layout.js"></script>
-
     <!-- main -->
-    <script type="text/javascript" src="/humanframe/global/assets/vendor/swiper/swiper.js"></script>
-    <link type="text/css" rel="stylesheet" href="/humanframe/global/assets/vendor/swiper/swiper.css">
-    <link type="text/css" rel="stylesheet" href="/humanframe/theme/portal2/assets/style/main.css">
-
+    <script th:inline="javascript" type="text/javascript" th:src="@{/global/vendor/swiper/swiper.js}"></script>
+    <link th:inline="css" rel="stylesheet" th:href="@{/global/vendor/swiper/swiper.css}">
+    <link th:inline="css" rel="stylesheet" th:href="@{/portal2/style/main.css}">
     <!--[if lt IE 9]>
-    <script src="/humanframe/global/assets/vendor/html5shiv.min.js"></script>
-    <script src="/humanframe/global/assets/vendor/respond.min.js"></script>
+    <script th:inline="javascript" type="text/javascript" th:src=="@{/global/vendor/html5shiv.min.js}"></script>
+    <script th:inline="javascript" type="text/javascript" th:src="@{/global/vendor/respond.min.js}"></script>
     <![endif]-->
 </head>
 <body>

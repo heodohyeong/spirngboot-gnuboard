@@ -1,14 +1,566 @@
 <!DOCTYPE html >
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{/layout/base-layout}"
+      layout:decorate="~{layout/base-layout}"
       layout:fragment="Content">
 <head>
     <meta charset="UTF-8">
+    <script th:inline="javascript" type="text/javascript" th:src="@{/portal2/assets/script/main.js}"></script>
     <title>index</title>
 </head>
 <body>
-<h1>content</h1>
+
+<!-- main-content-wrap -->
+<div class="main-content-wrap has-header">
+    <div class="inner">
+        <!-- grid-col-wrap -->
+        <div class="grid-col-wrap cols2_1">
+            <div class="col col2">
+                <!-- logo-site -->
+                <h2>
+                    <a href="#">
+                        <img id="siteSlogan" th:src="@{/portal2/assets/image/common/logo_site.svg}" alt="첨부이미지" />
+                    </a>
+                </h2>
+                <!--// logo-site -->
+                <!-- header-search-wrap -->
+                <div class="header-search-wrap">
+                    <fieldset>
+                        <legend class="hd-element">검색영역</legend>
+                        <div class="search-wrap">
+                            <div class="search-box">
+                                <label for="searchInput" class="hd-element">검색어를 입력하세요</label>
+                                <input type="search" id="searchInput" name="" placeholder="검색어를 입력하세요">
+                                <button type="button"><span class="hd-element">검색버튼</span></button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <!--// header-search-wrap -->
+            </div>
+            <div class="col col1">
+                <div class="search-keyword-wrap">
+                    <div class="title">추천검색어</div>
+                    <div class="keyword-list">
+                        <a href="#" class="keyword">
+                            윤컴즈
+                        </a>
+                        <a href="#" class="keyword">
+                            홍익인간
+                        </a>
+                        <a href="#" class="keyword">
+                            CMS
+                        </a>
+                        <a href="#" class="keyword">
+                            호환성인증
+                        </a>
+                        <a href="#" class="keyword">
+                            GS인증
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--// grid-col-wrap -->
+
+        <!-- grid-col-wrap -->
+        <div class="grid-col-wrap cols2_1">
+            <div class="col col2">
+                <div class="visual-slide-wrap swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img th:src="@{/portal2/assets/image/main/@visual_slide01.png}" alt="첫만남 이용권, 국민행복카드 출생아 1인당 200만원 바우처 지급" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img th:src="@{/portal2/assets/image/main/@visual_slide01.png}" alt="첫만남 이용권, 국민행복카드 출생아 1인당 200만원 바우처 지급" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slide-control">
+                        <button type="button" class="prev"><span class="hd-element">메인비주얼 이전 버튼</span></button>
+                        <button type="button" class="stop"><span class="hd-element">메인비주얼 정지 버튼</span></button>
+                        <button type="button" class="next"><span class="hd-element">메인비주얼 다음 버튼</span></button>
+                        <div class="count"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col1">
+                <div class="opinion-wrap">
+                    <h3 class="title"><strong>경기도</strong>의 <strong>소리</strong></h3>
+                    <p class="text">경기도의 소리를 듣겠습니다.</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                도민정책 제안
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                경기도민 발안
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                경기도민 청원
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="manifesto-wrap">
+                    <h3 class="title"><strong>매니페스토</strong> 경기</h3>
+                    <p class="text">경기도민과 함께 만들어갈 경기도의 모습</p>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i>
+                                    <img th:src="@{/portal2/assets/image/main/opinion_checkbox_checked.svg}"/>
+                                </i>
+                                <span>공약관리</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i>
+                                    <img th:src="@{/portal2/assets/image/main/opinion_checkbox_checked.svg}"/>
+                                </i>
+                                <span>공약실천</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i>
+                                    <img th:src="@{/portal2/assets/image/main/opinion_checkbox_checked.svg}"/>
+                                </i>
+                                <span>도정운영 방향</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--// grid-col-wrap -->
+        <!-- grid-col-wrap -->
+        <div class="grid-col-wrap cols2_1">
+            <div class="col col2">
+                <div class="news-group-wrap tab-nav-content">
+                    <nav class="tab-nav">
+                        <ul>
+                            <li class="active">
+                                <a href="#">보도자료</a>
+                            </li>
+                            <li>
+                                <a href="#">최신소식</a>
+                            </li>
+                            <li>
+                                <a href="#">계약입찰</a>
+                            </li>
+                            <li>
+                                <a href="#">고시공고</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- tab-content -->
+                    <div class="tab-content active">
+                        <div class="headline-news">
+                            <a href="#">
+                                <div class="subject">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="front">
+                                    <span class="year">2021</span>
+                                    <span class="day">06-08</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-list-wrap">
+                            <ul class="news-list">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">보도자료 게시글 제목</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-more">
+                            <a href="#"><em><span class="hd-element">보도자료 </span>더보기</em></a>
+                        </div>
+                    </div>
+                    <!--// tab-content -->
+                    <!-- tab-content -->
+                    <div class="tab-content">
+                        <div class="headline-news">
+                            <a href="#">
+                                <div class="subject">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="front">
+                                    <span class="year">2021</span>
+                                    <span class="day">06-08</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-list-wrap">
+                            <ul class="news-list">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">공지사항 게시글 제목</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-more">
+                            <a href="#"><em><span class="hd-element">공지사항 </span>더보기</em></a>
+                        </div>
+                    </div>
+                    <!--// tab-content -->
+                    <!-- tab-content -->
+                    <div class="tab-content">
+                        <div class="headline-news">
+                            <a href="#">
+                                <div class="subject">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="front">
+                                    <span class="year">2021</span>
+                                    <span class="day">06-08</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-list-wrap">
+                            <ul class="news-list">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">계약입찰계약입찰계약입찰계약입찰계약입찰계약입찰 게시글 제목</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">계약입찰(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-more">
+                            <a href="#"><em><span class="hd-element">계약입찰 </span>더보기</em></a>
+                        </div>
+                    </div>
+                    <!--// tab-content -->
+                    <!-- tab-content -->
+                    <div class="tab-content">
+                        <div class="headline-news">
+                            <a href="#">
+                                <div class="subject">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</div>
+                                <div class="front">
+                                    <span class="year">2021</span>
+                                    <span class="day">06-08</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="news-list-wrap">
+                            <ul class="news-list">
+                                <li>
+                                    <a href="#">
+                                        <span class="text">고시공고 고시공고 게시글 제목</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">고시공고건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="text">건설공사(건축분야)안전점검 수행기관 지정을 위한 모집 결과 공지[화곡동 475-19]</span>
+                                        <span class="date">2021-06-08</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-more">
+                            <a href="#"><em><span class="hd-element">고시공고 </span>더보기</em></span></a>
+                        </div>
+                    </div>
+                    <!--// tab-content -->
+                </div>
+            </div>
+            <div class="col col1">
+                <div class="alarm-slide-wrap swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img th:src="@{/portal2/assets/image/main/@alarm_slide01.png}" alt="윤커뮤니케이션즈 홍익인간 CMS 데모사이트 오픈합니다."/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img th:src="@{/portal2/assets/image/main/@alarm_slide01.png}" alt="윤커뮤니케이션즈 홍익인간 CMS 데모사이트 오픈합니다."/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img th:src="@{/portal2/assets/image/main/@alarm_slide01.png}" alt="윤커뮤니케이션즈 홍익인간 CMS 데모사이트 오픈합니다."/>
+                        </div>
+                        <div class="swiper-slide">
+                            <img th:src="@{/portal2/assets/image/main/@alarm_slide01.png}" alt="윤커뮤니케이션즈 홍익인간 CMS 데모사이트 오픈합니다."/>
+                        </div>
+                    </div>
+                    <div class="slide-control">
+                        <button type="button" class="prev"><span class="hd-element">알림존 이전 버튼</span></button>
+                        <button type="button" class="stop"><span class="hd-element">알림존 정지 버튼</span></button>
+                        <button type="button" class="next"><span class="hd-element">알림존 다음 버튼</span></button>
+                        <div class="count"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// main-content-wrap -->
+<!-- main-content-wrap -->
+<div class="main-content-wrap has-bg">
+    <div class="inner">
+        <h2 class="main-section-title">
+            <span>시민과 함께하는 대한민국 서울</span>
+            <strong>편의성을 갖춘 시설정보가 여기 다 있다! </strong>
+        </h2>
+        <!-- info-news-wrap -->
+        <section class="info-news-wrap">
+            <div class="info-news info03">
+                <a href="#">
+                    <span class="category">알림</span>
+                    <div class="news-content">
+                        <div class="subject">
+                            윤커뮤니케이션즈, 공무원연금공단 '지능형 연금복지시스템' 구축에
+                        </div>
+                        <div class="text">
+                            공무원연금공단은 기술 트렌드와 코로나19 등 공무원연금공단은 기술 트렌드와 코로나19 등
+                        </div>
+                        <div class="date">2021-04-21</div>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#근로장려금</span>
+                        <span class="tag">#자녀장려금</span>
+                        <span class="tag">#근로장려금</span>
+                    </div>
+                </a>
+            </div>
+            <div class="info-news info02">
+                <a href="#">
+                    <span class="category">알림</span>
+                    <div class="news-content">
+                        <div class="subject">
+                            윤커뮤니케이션즈, 공무원연금공단 '지능형 연금복지시스템' 구축에
+                        </div>
+                        <div class="text">
+                            공무원연금공단은 기술 트렌드와 코로나19 등 공무원연금공단은 기술 트렌드와 코로나19 등
+                        </div>
+                        <div class="date">2021-04-21</div>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#근로장려금</span>
+                        <span class="tag">#자녀장려금</span>
+                        <span class="tag">#근로장려금</span>
+                    </div>
+                </a>
+            </div>
+            <div class="info-news info01">
+                <a href="#">
+                    <span class="category">공지</span>
+                    <div class="news-content">
+                        <div class="subject">
+                            윤커뮤니케이션즈, 공무원연금공단 '지능형 연금복지시스템' 구축에
+                        </div>
+                        <div class="text">
+                            공무원연금공단은 기술 트렌드와 코로나19 등 공무원연금공단은 기술 트렌드와 코로나19 등
+                        </div>
+                        <div class="date">2021-04-21</div>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#근로장려금</span>
+                        <span class="tag">#자녀장려금</span>
+                        <span class="tag">#근로장려금</span>
+                    </div>
+                </a>
+            </div>
+            <div class="info-news info01">
+                <a href="#">
+                    <span class="category">공지</span>
+                    <div class="news-content">
+                        <div class="subject">
+                            윤커뮤니케이션즈, 공무원연금공단 '지능형 연금복지시스템' 구축에
+                        </div>
+                        <div class="text">
+                            공무원연금공단은 기술 트렌드와 코로나19 등 공무원연금공단은 기술 트렌드와 코로나19 등
+                        </div>
+                        <div class="date">2021-04-21</div>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#근로장려금</span>
+                        <span class="tag">#자녀장려금</span>
+                        <span class="tag">#근로장려금</span>
+                    </div>
+                </a>
+            </div>
+            <div class="info-news info03">
+                <a href="#">
+                    <span class="category">알림</span>
+                    <div class="news-content">
+                        <div class="subject">
+                            윤커뮤니케이션즈, 공무원연금공단 '지능형 연금복지시스템' 구축에
+                        </div>
+                        <div class="text">
+                            공무원연금공단은 기술 트렌드와 코로나19 등 공무원연금공단은 기술 트렌드와 코로나19 등
+                        </div>
+                        <div class="date">2021-04-21</div>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#근로장려금</span>
+                        <span class="tag">#자녀장려금</span>
+                        <span class="tag">#근로장려금</span>
+                    </div>
+                </a>
+            </div>
+            <div class="info-news info02">
+                <a href="#">
+                    <span class="category">알림</span>
+                    <div class="news-content">
+                        <div class="subject">
+                            윤커뮤니케이션즈, 공무원연금공단 '지능형 연금복지시스템' 구축에
+                        </div>
+                        <div class="text">
+                            공무원연금공단은 기술 트렌드와 코로나19 등 공무원연금공단은 기술 트렌드와 코로나19 등
+                        </div>
+                        <div class="date">2021-04-21</div>
+                    </div>
+                    <div class="tag-list">
+                        <span class="tag">#근로장려금</span>
+                        <span class="tag">#자녀장려금</span>
+                        <span class="tag">#근로장려금</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <!--// info-news-wrap -->
+    </div>
+</div>
+<!--// main-content-wrap -->
+<!-- main-content-wrap -->
+<div class="main-content-wrap">
+    <div class="inner">
+        <h2 class="main-section-title">
+            <span>시민과 함께하는 대한민국 서울</span>
+            <strong>편의성을 갖춘 시설정보가 여기 다 있다! </strong>
+        </h2>
+        <div class="service-slide-wrap swiper-container">
+            <div class="swiper-wrapper">
+                <div class="service-slide service01 swiper-slide">
+                    <a href="#">
+                        <div class="img">
+                            <img th:src="@{/portal2/assets/image/main/main_place_slide01.png}" alt=""/>
+                        </div>
+                        <span class="title">
+                                경기도평생교육 진흥원
+                            </span>
+                    </a>
+                </div>
+                <div class="service-slide  service02 swiper-slide">
+                    <a href="#">
+                        <div class="img">
+                            <img th:src="@{/portal2/assets/image/main/main_place_slide02.png}" alt=""/>
+                        </div>
+                        <span class="title">
+                                경기도평생교육 진흥원
+                            </span>
+                    </a>
+                </div>
+                <div class="service-slide  service03 swiper-slide">
+                    <a href="#">
+                        <div class="img">
+                            <img th:src="@{/portal2/assets/image/main/main_place_slide03.png}" alt=""/>
+                        </div>
+                        <span class="title">
+                                경기도평생교육 진흥원
+                            </span>
+                    </a>
+                </div>
+                <div class="service-slide  service04 swiper-slide">
+                    <a href="#">
+                        <div class="img">
+                            <img th:src="@{/portal2/assets/image/main/main_place_slide04.png}" alt=""/>
+                        </div>
+                        <span class="title">
+                                경기도평생교육 진흥원
+                            </span>
+                    </a>
+                </div>
+                <div class="service-slide  service05 swiper-slide">
+                    <a href="#">
+                        <div class="img">
+                            <img th:src="@{/portal2/assets/image/main/main_place_slide05.png}" alt=""/>
+                        </div>
+                        <span class="title">
+                                경기도평생교육 진흥원
+                            </span>
+                    </a>
+                </div>
+                <div class="service-slide  service06 swiper-slide">
+                    <a href="#">
+                        <div class="img">
+                            <img th:src="@{/portal2/assets/image/main/main_place_slide06.png}" alt=""/>
+                        </div>
+                        <span class="title">
+                                경기도평생교육 진흥원
+                            </span>
+                    </a>
+                </div>
+            </div>
+            <div class="slide-control">
+                <button type="button" class="prev"><span class="hd-element">서비스슬라이드 이전 버튼</span></button>
+                <!--<button type="button" class="stop"><span class="hd-element">서비스슬라이드 정지 버튼</span></button>-->
+                <button type="button" class="next"><span class="hd-element">서비스슬라이드 다음 버튼</span></button>
+                <div class="count"></div>
+            </div>
+        </div>
+
+        <div class="demo-text">
+            *본 사이트는 홍익인간 CMS 솔루션으로 반응형 웹 기준으로 제작되었습니다.
+        </div>
+    </div>
+</div>
+<!--// main-content-wrap -->
+
 
 </body>
 </html>

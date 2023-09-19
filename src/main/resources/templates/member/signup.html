@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="member-form">
+    <script>
+        $('.ex-icon').click(function(){
+            $('.email-text').toggleClass('active');
+            return false;
+        });
+    </script>
+    <form action="./registerAction" id="frmRegister" name="frmRegister" method="post">
+        <input type="hidden" id="crud" name="crud" value="${crud}">
+        <input type="hidden" name="nextStep" id="nextStep" value="complete"/>
+        <input type="hidden" name="agreeYn" value="${param.agreeYn }"/>
+        <input type="hidden" id="email" name="email">
+
+        <div class="member-div mb-150">
+            <h2>회원가입</h2>
+            <ul class="member-dash mt-30">
+                <li class="on"><span>1</span>약관 동의</li>
+                <li class="on"><span>2</span>회원정보 입력</li>
+                <li><span>3</span>가입 완료</li>
+            </ul>
+
+            <h3 class="h3-title mt-50">아이디 정보 <span class="ab-text"><span class="dot"></span> 는 필수 입력 항목입니다.</span></h3>
+            <div class="member-info mt-30">
+                <ul>
+                    <li>
+                        <div><span class="red-dot">아이디</span></div>
+                        <div>
+                            <div class="input-box-wrap">
+                                <input type="hidden" id="mberIdCheck" name="mberIdCheck" value="N">
+                                <input id="mberId" name="mberId" type="text" maxlength="20" value="" placeholder="아이디를 입력하세요" class="input-control id-input" autocomplete="off">
+                                <a href="#" onclick="f_mberIdDupCheck(); return false;" class="btn is-white ml-10">중복확인</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span class="red-dot">비밀번호</span></div>
+                        <div>
+                            <div class="input-box-wrap">
+                                <input id="password" name="password"  type="password" maxlength="40" value="" placeholder="8 ~ 16자의 영문, 숫자, 특수문자 중 2가지 이상 조합" class="input-control max-100" autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span class="red-dot">비밀번호 확인</span></div>
+                        <div>
+                            <div class="input-box-wrap">
+                                <input id="rePassword" name="rePassword" type="password" maxlength="40" value="" placeholder="" class="input-control max-100" autocomplete="off">
+                                <!-- <p class="text-alert">비밀번호가 일치하지 않습니다.</p> -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="h3-title mt-50">개인 정보 <span class="ab-text"><span class="dot"></span> 는 필수 입력 항목입니다.</span></h3>
+            <div class="member-info mt-30">
+                <ul>
+                    <li>
+                        <div><span>성명</span></div>
+                        <div>
+                            <div class="input-box-wrap">
+                                <input id="mberNm" name="mberNm"  type="text" maxlength="100" value="" class="input-control max-100" autocomplete="off">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span>연락처</span></div>
+                        <div class="phone-box-wrap">
+                            <input type="text" id="telno" name="telno" class="input-control max-100" value="" maxlength="13" onkeypress="onlyNumber();">
+                            <!-- <div class="inner-box">
+                                <label for="telno1" class="hd-element">전화번호 첫번째자리 입력</label>
+                                <input type="text" id="telno1" name="telno1" class="input-control" value="" maxlength="3">
+                            </div>
+                            <div class="inner-box">
+                                <label for="telno2" class="hd-element">전화번호 두번째자리 입력</label>
+                                <input type="text" id="telno2" name="telno2" class="input-control" value="" maxlength="4" >
+                            </div>
+                            <div class="inner-box">
+                                <label for="telno3" class="hd-element">전화번호 마지막자리 입력</label>
+                                <input type="text" id="telno3" name="telno3" class="input-control" value="" maxlength="4" >
+                            </div> -->
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <span>이메일</span><span class="ex-icon ml-5"></span><span class="red-dot"></span>
+                            <div class="email-text">
+                                ※ 이메일과 성명/연락처 정보를 활용하여 아이디/비밀번호 찾기 등을 진행할 수 있으니 정확한 주소를 입력해주세요.
+                            </div>
+                        </div>
+                        <div>
+                            <div class="email-box-wrap">
+                                <div class="inner-box">
+                                    <label for="email1" class="hd-element">이메일을 입력해주세요</label>
+                                    <input type="text" id="email1" name="email1" class="input-control" value="" title="이메일 아이디" required>
+                                </div>
+                                <div class="inner-box">
+                                    <label for="email2" class="hd-element">메일 계정을 입력해주세요</label>
+                                    <input type="text" id="email2" name="email2" class="input-control" value="" title="이메일 도메인 직접입력" required>
+                                </div>
+                            </div>
+                            <div class="form-group is-inline">
+                                <select name="email3" id="email3" class="select-control" title="이메일 도메인 선택" onchange="this.form.email2.value=this[selectedIndex].value">
+                                    <option value="">직접입력</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="korea.com">korea.com</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div><span class="red-dot">연령 확인</span></div>
+                        <div>
+                            <div class="checkbox-control">
+                                <input type="hidden" id="agreeCheck" name="agreeCheck" value="N">
+                                <input type="checkbox" id="agreeCk" name="agreeCk">
+                                <label for="agreeCk">만 14세 이상입니다.</label>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mt-30 text-align is-center">
+                <a href="./register?nextStep=" class="btn is-w120 is-white">이전</a>
+                <a href="#" onclick="fn_submit(); return false;" class="btn is-w120 is-indigo">다음</a>
+                <button type="button" id="submitTmp" style="display:none;" />
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

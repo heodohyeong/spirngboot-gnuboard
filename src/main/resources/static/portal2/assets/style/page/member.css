@@ -39,7 +39,7 @@
   font-weight: 500;
   color: #191919;
   padding-left: 2.6rem;
-  background: url(/humanframe/theme/portal2/assets/image/icon/h3_bul_1.png) no-repeat 0 center;
+  background: url(/portal2/assets/image/icon/h3_bul_1.png) no-repeat 0 center;
 }
 
 .member-form h3 .is-red {
@@ -68,7 +68,7 @@
 }
 
 .member-form .select-control {
-  background: url(/humanframe/theme/portal2/assets/image/icon/ico_select_arrow.png) no-repeat calc(100% - 20px) center;
+  background: url(/portal2/assets/image/icon/ico_select_arrow.png) no-repeat calc(100% - 20px) center;
 }
 
 .member-div {
@@ -211,7 +211,7 @@
   top: 5px;
   width: 20px;
   height: 20px;
-  background-image: url(/humanframe/theme/portal2/assets/image/icon/ico_check01.png);
+  background-image: url(/portal2/assets/image/icon/ico_check01.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-color: #AD8658;
@@ -375,7 +375,7 @@
 }
 
 .member-info .text-alert {
-  background: url(/humanframe/theme/portal2/assets/image/icon/text_alert.png) no-repeat 0 center;
+  background: url(/portal2/assets/image/icon/text_alert.png) no-repeat 0 center;
   padding-left: 20px;
   color: #F45249;
 }
@@ -448,7 +448,7 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-  background: url(/humanframe/theme/portal2/assets/image/icon/ex_icon.png) no-repeat 0 center;
+  background: url(/portal2/assets/image/icon/ex_icon.png) no-repeat 0 center;
   cursor: pointer;
 }
 
@@ -475,7 +475,7 @@
   width: 380px;
   height: 250px;
   margin: 0 auto;
-  background: url(/humanframe/theme/portal2/assets/image/common/member_bg.png) no-repeat center 45px;
+  background: url(/portal2/assets/image/common/member_bg.png) no-repeat center 45px;
 }
 
 .member-cplt p {
@@ -540,7 +540,7 @@ input:read-only {
 }
 
 .mypage {
-  background: url(/humanframe/theme/portal2/assets/image/icon/member_icon.png) no-repeat center 10rem;
+  background: url(/portal2/assets/image/icon/member_icon.png) no-repeat center 10rem;
   background-size: 11.2rem 9rem;
 }
 
@@ -743,7 +743,7 @@ input:read-only {
 }
 
 .board-srv-rst .board-prog::-webkit-progress-value {
-  background: url(/humanframe/theme/portal2/assets/image/common/progress-bar.png) repeat-x 0 0;
+  background: url(/portal2/assets/image/common/progress-bar.png) repeat-x 0 0;
   background-size: 4px;
 }
 

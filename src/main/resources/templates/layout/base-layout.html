@@ -67,7 +67,7 @@
                         </th:block>
 
 
-                        <th:block th:if="${#strings.replace(request.requestURI,'/','')} != 'member'">
+                        <th:block th:if="!${#strings.contains(#strings.replace(request.requestURI,'/',''),'member')}">
                             <div class="sub-content-header">
                                 <h3 class="title-content">
                                     제목

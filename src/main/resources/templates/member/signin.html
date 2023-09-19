@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base-layout}"
+      layout:fragment="Content">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<div class="member-form">
+    <div class="member-div mypage">
+        <h2>로그인</h2>
+        <div class="member-text">
+            <p>사이트 방문해주셔서 감사합니다.<br/>로그인하시면 보다 편리하게 서비스 이용이 가능합니다.</p>
+        </div>
+        <form  class="login-form" id="frmLogin" name="frmLogin" method="post" action="./loginAction" >
+            <div class="form-group">
+                <label for="mbrId" class="hd-element">아이디입력</label>
+                <input id="mberId" name="mberId"  type="text" value="" class="input-control" autocomplete="off" placeholder="아이디">
+            </div>
+            <div class="form-group">
+                <label for="password" class="hd-element">비밀번호입력</label>
+                <input id="password" name="password" type="password" value="" class="input-control" autocomplete="off" placeholder="비밀번호">
+            </div>
+            <div class="checkbox-control">
+                <input type="checkbox" id="rememberme" name="rememberme" >
+                <label for="rememberme">아이디 저장</label>
+            </div>
+            <div class="login-btn">
+                <a href="#" onclick="fn_submit(); return false;" class="back-org is-indigo">로그인</a>
+                <button id="submitTmp" type="submit" style="display:none;" />
+            </div>
+            <ul class="login-list">
+                <li><a href="./findId">아이디 찾기</a></li>
+                <li><a href="./findPw">비밀번호 찾기</a></li>
+                <li><a href="./register">회원가입</a></li>
+            </ul>
+        </form>
+    </div>
+</div>
+</body>
+</html>

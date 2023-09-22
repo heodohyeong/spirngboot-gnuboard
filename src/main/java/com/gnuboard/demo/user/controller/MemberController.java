@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("member")
-public class LoginController {
+public class MemberController {
 
 
     @GetMapping("login")

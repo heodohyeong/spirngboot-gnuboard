@@ -1,8 +1,6 @@
 package com.gnuboard.demo.board.repository;
 
-import com.gnuboard.demo.board.domain.BoardFile;
-import com.gnuboard.demo.board.domain.BoardSettings;
-import com.gnuboard.demo.board.domain.QBoardSettings;
+import com.gnuboard.demo.board.domain.*;
 import com.querydsl.jpa.impl.JPAQuery;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.DisplayName;
@@ -13,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -26,6 +25,8 @@ class BoardSettingRepositoryTest {
     @Autowired
     private BoardSettingRepository boardSettingRepository;
 
+    @Autowired
+    private BoardPostRepository boardPostRepository;
 
     @Autowired
     EntityManager em;
@@ -62,29 +63,59 @@ System.out.println(list);
         boardSettings.setCreatedBy(Long.valueOf(1));
         //boardSettings.setId(Long.valueOf(1));
 
+        BoardPost boardPost = new BoardPost();
+        boardPost.setTitle("testtest");
+        boardPost.setContent("content");
+        boardPost.setBoardSettings(boardSettings);
+
         BoardFile boardFile = new BoardFile();
         boardFile.setContent("123");
         boardFile.setCreatedAt(LocalDateTime.now());
         boardFile.setDownload(0);
         boardFile.setFilesize(10);
 
-        boardSettings.addFile(boardFile);
+        PostFile postFile = new PostFile();
+        postFile.setBoardPost(boardPost);
+        postFile.setBoardFile(boardFile);
+        postFile.setDelYn("N");
+
+        em.persist(boardSettings);
+        em.persist(boardPost);
         em.persist(boardFile);
-        System.out.println("============================ : "+boardFile.getId());
+        em.persist(postFile);
 
-        boardSettingRepository.save(boardSettings);
-
-        List<BoardSettings> list = (List<BoardSettings>) em.createQuery("select b from BoardSettings b" , BoardSettings.class).getResultList();
-
-        List<BoardFile> list2 = (List<BoardFile>) em.createQuery("select b from BoardFile b" , BoardFile.class).getResultList();
-
-        System.out.println(list);
-        System.out.println(list.get(0).getFileList());
-
-        System.out.println(list2);
+        em.flush();
+        em.clear();
 
 
+        BoardPost bp = em.find(BoardPost.class , 1);
 
+
+        System.out.println(bp);
+
+        for(PostFile pf : bp.getPostFileList()){
+
+            System.out.print(pf.getBoardFile());
+
+        }
+
+        em.flush();
+        em.clear();
+
+        System.out.println("=========================================");
+
+        List<BoardPost> bpList = boardPostRepository.findAll();
+
+        System.out.println(bpList);
+        for(BoardPost bp2 : bpList){
+
+            System.out.println(bp2.getPostFileList());
+            for(PostFile pf : bp2.getPostFileList()){
+                System.out.println(pf.getBoardFile());
+            }
+
+
+        }
     }
 
 }

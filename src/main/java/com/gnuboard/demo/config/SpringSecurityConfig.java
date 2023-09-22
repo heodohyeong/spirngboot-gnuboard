@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.web.SecurityFilterChain;
@@ -23,6 +24,7 @@ public class SpringSecurityConfig {
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 //.csrf(AbstractHttpConfigurer::disable)
+                //.csrf(csrfConfig -> csrfConfig.ignoringRequestMatchers("/h2-console/**"))
                 /*.headers((headersConfig) ->
                             headersConfig.frameOptions(frameOptionsConfig -> frameOptionsConfig.disable())
                         )*/
@@ -31,8 +33,8 @@ public class SpringSecurityConfig {
                 .authorizeHttpRequests(authorizeHttpRequestsConfig ->
                                 authorizeHttpRequestsConfig.requestMatchers(
                                          //   new AntPathRequestMatcher("/member/login")
-                                       //,new AntPathRequestMatcher("/h2-console/**")
-                                        new AntPathRequestMatcher("/**")
+                                       new AntPathRequestMatcher("/h2-console/**")
+                                        ,new AntPathRequestMatcher("/**")
                                         //,new AntPathRequestMatcher("/index")
                                 ).permitAll().anyRequest().authenticated()
                         )
@@ -45,4 +47,9 @@ public class SpringSecurityConfig {
         ;
         return http.build();
     }
+
+//    @Bean
+//    public WebSecurityCustomizer webSecurityCustomizer() {
+//        return (web) -> web.ignoring().requestMatchers(new AntPathRequestMatcher("/h2-console/**"));
+//    }
 }

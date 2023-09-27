@@ -63,16 +63,16 @@
             </ul>
             <!--// board-list-head -->
             <ul class="board-list list-body">
-                <!-- board-list-li -->
-                <li>
+                <li th:each="post : ${post}">
                     <a href="#">
                         <div class="board-data-group">
                             <div class="col col-number">
-                                <span>1987</span>
+                                <span th:text="${post.id}">1987</span>
                             </div>
                             <div class="col col-subject">
                                 <div class="board-data-subject">
-                                <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.
+                                <span class="text txt-subject" th:text="${post.title}">
+                                    오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.
                                 </span>
                                     <i class="icon ico-new"><em>새글</em></i>
                                 </div>
@@ -84,278 +84,11 @@
                                 <i class="icon ico-file"><em>첨부파일있음</em></i>
                             </div>
                             <div class="col col-writer">
-                                <span>홍길동</span>
+                                <span th:text="${post.createdBy}">홍길동</span>
                             </div>
                             <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                    <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요. </span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="https://www.gangseo.seoul.kr/site.gsc/sub6/page1.jsp" target="_blank">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                <span class="text txt-subject">공연 중구문화가족회원 할인 문의 링크 게시판 게시물
-                                </span>
-                                    <i class="icon ico-link"><em>링크</em></i>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                    <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.</span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.
-                                </span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.
-                                </span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.
-                                </span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.
-                                </span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요.
-                                </span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <!--// board-list-li -->
-                <!-- board-list-li -->
-                <li>
-                    <a href="#">
-                        <div class="board-data-group">
-                            <div class="col col-number">
-                                <span>1987</span>
-                            </div>
-                            <div class="col col-subject">
-                                <div class="board-data-subject">
-                                    <span class="text txt-subject">오쇠동 녹지보호 범위내에거 그린벨트 이용 가능하게 해주세요. </span>
-                                    <i class="icon ico-new"><em>새글</em></i>
-                                </div>
-                            </div>
-                            <div class="col col-secret">
-                                <i class="icon ico-secret"><em>비공개</em></i>
-                            </div>
-                            <div class="col col-file">
-                                <i class="icon ico-file"><em>첨부파일있음</em></i>
-                            </div>
-                            <div class="col col-writer">
-                                <span>홍길동</span>
-                            </div>
-                            <div class="col col-date">
-                                <span>2021-02-29</span>
+                              <!--  <span th:text="${#dates.format(post.createdAt, 'yyyy-MM-dd HH:mm:ss')}">2021-02-29</span>-->
+                                <span th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd HH:mm:ss')}">2021-02-29</span>
                             </div>
                         </div>
                     </a>
@@ -372,20 +105,32 @@
         <!--// board btn -->
 
         <!-- board paginate -->
-        <div class="paginate">
-            <!--<a href="#" title="First" class="com first"><span class="hd-element">첫페이지 이동</span></a>-->
-            <a href="#" title="Prev" class="com prev"><span class="hd-element">이전페이지 이동</span></a>
-            <a href="#" title="Prev" class="m-prev"><span class="hd-element">이전페이지 이동</span></a>
-            <a class="active" href="#none">1</a>
-            <a href="#" title="2 Page">2</a>
-            <a href="#" title="3 Page">3</a>
-            <a href="#" title="4 Page">4</a>
-            <a href="#" title="5 Page">5</a>
-            <span class="num-page-total"><em>32</em></span>
-            <a href="#" title="Next" class="m-next"><span class="hd-element">다음페이지 이동</span></a>
-            <!-- mobile count -->
-            <a href="#" title="Next" class="com next"><span class="hd-element">다음페이지 이동</span></a>
-            <!--<a href="#" title="Last" class="com last"><span class="hd-element">마지막페이지 이동</span></a>-->
+        <div class="paginate"
+             th:with="start=${T(java.lang.Math).floor(post.number/10)*10 + 1},
+                    last=(${start + 9 < post.totalPages ? start + 9 : post.totalPages})">
+            <th:block th:with="
+                firstAddr=@{/board1(page=1)}
+                ,prevAddr=@{/board1(page=${post.number},bsId=${searchBpId})}
+                ,nextAddr=@{/board1(page=${post.number+2},bsId=${searchBpId})}
+                ,lastAddr=@{/board1(page=${post.totalPages},bsId=${searchBpId})}
+            ">
+
+                <!--<a href="#" title="First" class="com first"><span class="hd-element">첫페이지 이동</span></a>-->
+                <a th:href="${prevAddr}" title="Prev" class="com prev"><span class="hd-element">이전페이지 이동</span></a>
+                <a th:href="${prevAddr}" title="Prev" class="m-prev"><span class="hd-element">이전페이지 이동</span></a>
+
+                <a th:each="page: ${#numbers.sequence(start, last)}"
+                    th:class="${page == post.number + 1} ? 'active'"
+                    th:text="${page}" th:href="@{/board1(page=${page},bsId=${searchBpId})}">
+                </a>
+
+                <span class="num-page-total"><em th:text="${post.totalElements}">32</em></span>
+                <a th:href="${nextAddr}" title="Next" class="m-next"><span class="hd-element">다음페이지 이동</span></a>
+                <!-- mobile count -->
+                <a th:href="${nextAddr}" title="Next" class="com next"><span class="hd-element">다음페이지 이동</span></a>
+                <!--<a th:href="#" title="Last" class="com last"><span class="hd-element">마지막페이지 이동</span></a>-->
+
+            </th:block>
         </div>
         <!--// board paginate -->
 

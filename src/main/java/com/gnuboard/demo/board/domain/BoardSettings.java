@@ -3,13 +3,18 @@ package com.gnuboard.demo.board.domain;
 
 import com.gnuboard.demo.common.domain.BaseEntity;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.*;
 
-@Data
+
 @Entity
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class BoardSettings extends BaseEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

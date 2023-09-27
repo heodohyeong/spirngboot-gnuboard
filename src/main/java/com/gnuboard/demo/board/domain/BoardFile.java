@@ -3,12 +3,17 @@ package com.gnuboard.demo.board.domain;
 
 import com.gnuboard.demo.common.domain.BaseEntity;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Data
+@Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class BoardFile extends BaseEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,6 +42,7 @@ public class BoardFile extends BaseEntity {
 
     @OneToOne(mappedBy = "boardFile")
     private PostFile postFile;
+
 
     @Override
     public String toString() {

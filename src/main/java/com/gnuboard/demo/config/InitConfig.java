@@ -18,6 +18,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
@@ -32,35 +33,44 @@ public class InitConfig {
     @Transactional
     @PostConstruct
     public void init(){
-        BoardSettings boardSettings = new BoardSettings();
-        boardSettings.setCreatedAt(LocalDateTime.now());
-        boardSettings.setTitle("test");
-        boardSettings.setWriter("test1");
-        boardSettings.setCreatedBy(Long.valueOf(1));
-        //boardSettings.setId(Long.valueOf(1));
+//        BoardSettings boardSettings = new BoardSettings();
+//        boardSettings.setCreatedAt(LocalDateTime.now());
+//        boardSettings.setTitle("test");
+//        boardSettings.setWriter("test1");
+//        boardSettings.setCreatedBy(Long.valueOf(1));
+//        //boardSettings.setId(Long.valueOf(1));
+//
+//        BoardPost boardPost = new BoardPost();
+//        boardPost.setTitle("testtest");
+//        boardPost.setContent("content");
+//        boardPost.setBoardSettings(boardSettings);
+//
+//        BoardFile boardFile = new BoardFile();
+//        boardFile.setContent("123");
+//        boardFile.setCreatedAt(LocalDateTime.now());
+//        boardFile.setDownload(0);
+//        boardFile.setFilesize(10);
+//
+//        PostFile postFile = new PostFile();
+//        postFile.setBoardPost(boardPost);
+//        postFile.setBoardFile(boardFile);
+//        postFile.setDelYn("N");
+//        boardSettingRepository.save(boardSettings);
+//        boardPostRepository.save(boardPost);
+//        boardFileRepository.save(boardFile);
+//        postFileRepository.save(postFile);
+//
+//
+//        Optional<BoardSettings> byId = boardSettingRepository.findById(1L);
+//        BoardSettings bs = byId.get();
+//
+//        for(int i=0; i<30; i++){
+//            BoardPost  bp = new BoardPost();
+//            bp.setTitle("test["+ i+"]");
+//            bp.setContent("content["+ i+"]");
+//            bp.setBoardSettings(bs);
+//            boardPostRepository.save(bp);
+//        }
 
-        BoardPost boardPost = new BoardPost();
-        boardPost.setTitle("testtest");
-        boardPost.setContent("content");
-        boardPost.setBoardSettings(boardSettings);
-
-        BoardFile boardFile = new BoardFile();
-        boardFile.setContent("123");
-        boardFile.setCreatedAt(LocalDateTime.now());
-        boardFile.setDownload(0);
-        boardFile.setFilesize(10);
-
-        PostFile postFile = new PostFile();
-        postFile.setBoardPost(boardPost);
-        postFile.setBoardFile(boardFile);
-        postFile.setDelYn("N");
-        boardSettingRepository.save(boardSettings);
-        boardPostRepository.save(boardPost);
-        boardFileRepository.save(boardFile);
-        postFileRepository.save(postFile);
-//        em.persist(boardSettings);
-//        em.persist(boardPost);
-//        em.persist(boardFile);
-//        em.persist(postFile);
     }
 }

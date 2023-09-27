@@ -182,25 +182,25 @@
         &.answer3{
             width:48px;
         }
-    } 
-    &.ico-secret{                
+    }
+    &.ico-secret{
         background-image:url(/humanframe/global/assets/image/icon/ico_board_secret.svg);
-    } 
-    &.ico-file{                
+    }
+    &.ico-file{
         background-image:url(/humanframe/global/assets/image/icon/ico_board_file.svg);
-    } 
-    &.ico-new{                
+    }
+    &.ico-new{
         background-image:url(/humanframe/global/assets/image/icon/ico_board_new.svg);
         margin-left:4px;
-    } 
+    }
     &.ico-link{
         background-image:url(/humanframe/global/assets/image/icon/ico_board_link.svg);
         margin-left:4px;
-    }      
-}  
+    }
+}
 table{
     td.col-subject{
-        text-align:left; 
+        text-align:left;
     }
 }
 .checkbox-list-wrap.rows{
@@ -219,7 +219,7 @@ table{
     border-top:2px solid #354458;
     .board-survey-group{
         .board-survey-question{
-            background-color:#F5F7FB;            
+            background-color:#F5F7FB;
             padding:2.0rem;
             color:#191919;
         }
@@ -253,14 +253,14 @@ table{
         padding-bottom:30px;
     }
     /* board-list-wrap */
-    .board-list-wrap{      
-        display:block;  
-        /* board-list */      
+    .board-list-wrap{
+        display:block;
+        /* board-list */
         ul.board-list{
             &.list-head {
                 background-color:#F4F4F4;
                 border-top:2px solid #003568;
-                @include respond-to('mobile-large') {  
+                @include respond-to('mobile-large') {
                     display:none;
                 }
                 .col{
@@ -273,29 +273,29 @@ table{
             }
             /* list-head, list-body common */
             > li {
-                border-bottom:1px solid #ddd;                
+                border-bottom:1px solid #ddd;
                 a{
                     display:block;
                 }
                 .board-data-group{
                     display:table;
                     table-layout:fixed;
-                    width:100%;     
+                    width:100%;
                     .col{
-                        display:table-cell;      
-                        width:80px;                  
+                        display:table-cell;
+                        width:80px;
                         padding:15px 10px;
                         font-size:16px;
                         color:#555555;
                         text-align:center;
                         vertical-align:middle;
                         span{ vertical-align:middle;}
-                        i{vertical-align:middle;}                        
+                        i{vertical-align:middle;}
                         &.col-number{
                             width:80px;
                         }
-                        &.col-subject{                           
-                            width:auto;                                             
+                        &.col-subject{
+                            width:auto;
                         }
                         &.col-secret{
                             width:100px;
@@ -313,110 +313,110 @@ table{
                             width:100px;
                         }
                         &.col-period{
-                           width:12.0rem;   
+                           width:12.0rem;
                         }
                         &.col-joinnum{
                             width:100px;
-                        }                        
+                        }
                     }
                     &.is-answer{
                         > div.col-number span{ display:none;}
-                    }  
-                }  
+                    }
+                }
             }
             &.list-body{
-                @include respond-to('mobile-large') {  
-                    border-top:2px solid #003568;  
+                @include respond-to('mobile-large') {
+                    border-top:2px solid #003568;
                 }
                 >li {
-                    @include respond-to('mobile-large') {  
+                    @include respond-to('mobile-large') {
                         padding:15px 10px;
                         &.is-answer{
                             background-color:#F5F7FB;
                             //padding-left:30px;
                         }
-                    }                    
+                    }
                     .col{
-                        @include respond-to('mobile-large') {  
+                        @include respond-to('mobile-large') {
                             display:inline-block;
                             width:auto;
                             padding:0 0 0 0;
-                        } 
+                        }
                         &.col-subject{
-                            text-align:left; 
-                            padding:15px 0;                                    
-                            @include respond-to('mobile-large') {  
+                            text-align:left;
+                            padding:15px 0;
+                            @include respond-to('mobile-large') {
                                 display:block;
                                 width:auto;
                                 margin-right:48px;
-                                padding:0 0 5px 0;  
-                            }    
+                                padding:0 0 5px 0;
+                            }
                             .text{
                                 width:auto;
-                                &.txt-subject{   
-                                    display:inline-block;                                         
-                                    font-size:1.6rem; 
-                                    color:#191919;  
-                                    max-width:calc(100% - 60px);  
-                                    @include ellipsis(1);                          
-                                    @include respond-to('mobile-large') {      
-                                        display:inline;  
+                                &.txt-subject{
+                                    display:inline-block;
+                                    font-size:1.6rem;
+                                    color:#191919;
+                                    max-width:calc(100% - 60px);
+                                    @include ellipsis(1);
+                                    @include respond-to('mobile-large') {
+                                        display:inline;
                                         max-width:100%;
-                                        font-size:clamp(16px, calc(1.6rem + 0.5vw), 1vw);   
-                                        white-space:normal;                                      
+                                        font-size:clamp(16px, calc(1.6rem + 0.5vw), 1vw);
+                                        white-space:normal;
                                     }
                                 }
-                            }                            
+                            }
                             /*.board-data-subject{
                                 display: flex;
                                 flex-wrap: nowrap;
-                                flex-direction: row; 
+                                flex-direction: row;
                                 align-items: top;
-                                justify-content: flex-start;  
-                                @include respond-to('mobile-large') {       
-                                    display:block;           
-                                }                                                           
+                                justify-content: flex-start;
+                                @include respond-to('mobile-large') {
+                                    display:block;
+                                }
                                 .text{
                                     width:auto;
-                                    &.txt-subject{                                                
+                                    &.txt-subject{
                                         @include ellipsis(1);
-                                        font-size:1.6rem; 
-                                        color:#191919;                              
-                                        @include respond-to('mobile-large') {                              
-                                            font-size:clamp(16px, calc(1.6rem + 0.5vw), 1vw);    
-                                            @include ellipsis(2);                                         
+                                        font-size:1.6rem;
+                                        color:#191919;
+                                        @include respond-to('mobile-large') {
+                                            font-size:clamp(16px, calc(1.6rem + 0.5vw), 1vw);
+                                            @include ellipsis(2);
                                         }
                                     }
-                                }    
+                                }
                                 .icon.ico-answer{
                                     display:block;
-                                }                              
-                            }   
-                             */                                                                           
-                        } 
+                                }
+                            }
+                             */
+                        }
                         &.col-period{
-                            @include respond-to('mobile-large') {  
+                            @include respond-to('mobile-large') {
                                 display:block;
                                 position:relative;
-                                width:100%;                                     
+                                width:100%;
                                 padding-left:20px;
                                 text-align:left;
                                 &::before{
                                     content:'';
-                                    position:absolute;                                    
+                                    position:absolute;
                                     width:16px;
                                     height:16px;
                                     left:0;
-                                    top:1.0rem;                                  
+                                    top:1.0rem;
                                     background-color:transparent;
                                     background-image: url(/humanframe/global/assets/image/icon/ico_board_calendar.svg);
                                     background-repeat:no-repeat;
-                                    background-position:50% 50%;     
+                                    background-position:50% 50%;
                                 }
-                            }                        
+                            }
                         }
                         &.col-joinnum{
-                            @include respond-to('mobile-large') {  
+                            @include respond-to('mobile-large') {
                                 display:block;
                                 position:relative;
                                 width:100%;
@@ -424,36 +424,36 @@ table{
                                 text-align:left;
                                 &::before{
                                     content:'';
-                                    position:absolute;                                    
+                                    position:absolute;
                                     width:16px;
                                     height:16px;
                                     left:0;
-                                    top:1.0rem;                                
+                                    top:1.0rem;
                                     background-color:transparent;
                                     background-image: url(/humanframe/global/assets/image/icon/ico_board_count.svg);
                                     background-repeat:no-repeat;
-                                    background-position:50% 50%;     
+                                    background-position:50% 50%;
                                 }
-                            }   
-                        } 
+                            }
+                        }
                         &.col-number{
-                            @include respond-to('mobile-large') {                             
-                                display:block;                               
+                            @include respond-to('mobile-large') {
+                                display:block;
                                 width:100%;
                                 text-align:left;
                             }
-                        }                          
-                        &.col-secret{    
-                            @include respond-to('mobile-large') {                             
+                        }
+                        &.col-secret{
+                            @include respond-to('mobile-large') {
                                 width:24px;
                                 position:absolute;
                                 right:24px;
                                 top:28px;
                                 vertical-align:top;
-                            }   
+                            }
                         }
                         &.col-file{
-                            @include respond-to('mobile-large') {                             
+                            @include respond-to('mobile-large') {
                                 width:24px;
                                 position:absolute;
                                 right:0;
@@ -462,20 +462,20 @@ table{
                             }
                         }
                         &.col-writer{
-                            @include respond-to('mobile-large') {                             
-                                width:auto;     
-                                padding-right:15px;
-                            }                      
-                        }
-                        &.col-date{
-                            @include respond-to('mobile-large') {                             
+                            @include respond-to('mobile-large') {
                                 width:auto;
                                 padding-right:15px;
                             }
-                        }                        
-                    } 
+                        }
+                        &.col-date{
+                            @include respond-to('mobile-large') {
+                                width:auto;
+                                padding-right:15px;
+                            }
+                        }
+                    }
                     .board-data-group{
-                        &.is-answer{                           
+                        &.is-answer{
                             padding-left:10px;
                             &.answer2{
                                 padding-left:20px;
@@ -484,7 +484,7 @@ table{
                                 padding-left:30px;
                             }
                         }
-                        @include respond-to('mobile-large') {  
+                        @include respond-to('mobile-large') {
                             display:block;
                             position:relative;
                             &.is-answer{
@@ -503,27 +503,27 @@ table{
                                         top:16px;
                                     }
                                 }
-                                
+
                             }
                         }
                     }
                 }
-            }       
-        }               
-    } 
+            }
+        }
+    }
 
     /* board-list-wrap */
-    .board-faq-wrap{      
-        display:block;  
-        /* board-list */      
+    .board-faq-wrap{
+        display:block;
+        /* board-list */
         .faq-list{
             border-top:2px solid #003568;
             > li {
-                border-bottom:1px solid #ddd;   
+                border-bottom:1px solid #ddd;
                 .faq-question{
                     display:table;
                     table-layout:fixed;
-                    width:100%;                    
+                    width:100%;
                     .col{
                         display:table-cell;
                         width:80px;
@@ -537,7 +537,7 @@ table{
                         &.col-subject{
                             width:auto;
                             color:#191919;
-                            font-size:1.6rem;  
+                            font-size:1.6rem;
                             text-align:left;
                             .txt-subject{
                                 @include ellipsis(2);
@@ -546,23 +546,23 @@ table{
                         &.col-btn{
                             width:6.0rem;
                             padding:0;
-                        } 
+                        }
                         .btn-acco{
                             width:6.0rem;
                             height:6.0rem;
                             background-color:transparent;
                             background-image: url(/humanframe/global/assets/image/icon/ico_board_faq_arw_down.svg);
                             background-repeat:no-repeat;
-                            background-position:50% 50%;                            
-                        }   
+                            background-position:50% 50%;
+                        }
                     }
-                }  
+                }
                 .faq-answer{
                     display:none;
                     background-color:#F5F7FB;
                     border-top:1px solid #ddd;
                     padding:2.0rem 3.0rem;
-                } 
+                }
                 &.active{
                     .faq-question{
                         .col-subject{
@@ -576,9 +576,9 @@ table{
                         background-image: url(/humanframe/global/assets/image/icon/ico_board_faq_arw_up.svg);
                     }
                 }
-            }  
-        } 
-    }     
+            }
+        }
+    }
 }
 .board-faq-etc{
     background-color:#F4F4F4;
@@ -633,12 +633,12 @@ table{
         }
         @include respond-to('mobile-large'){
             width:100% !important;
-        } 
+        }
         .input-control{
             width:100%;
             @include respond-to('mobile-large'){
                 width:100% !important;
-            } 
+            }
         }
         &.is-id{
             padding-right:118px;
@@ -667,25 +667,25 @@ table{
         margin-left:0px !important;
         display:block !important;
         margin-top:10px;
-    } 
+    }
 }
 .email-box-wrap{
     display:inline-block;
     vertical-align:middle;
-    width:340px; 
+    width:340px;
     @include respond-to('mobile-large'){
-        width:100%; 
+        width:100%;
         + .form-group{
             margin-top:10px;
         }
-    }   
+    }
     .inner{
         float:left;
         width:50%;
         .input-control{
             width:100%;
         }
-    }         
+    }
     .inner:first-child{
         padding-right:20px;
         position:relative;
@@ -700,7 +700,7 @@ table{
         }
     }
     .inner:last-child{
-        padding-left:20px;               
+        padding-left:20px;
     }
     @include respond-to('mobile-large'){
         .inner:first-child{
@@ -711,9 +711,9 @@ table{
             }
         }
         .inner:last-child{
-            padding-left:10px;               
+            padding-left:10px;
         }
-    }  
+    }
 }
 .post-box-wrap{
     width:430px;
@@ -741,7 +741,7 @@ table{
     }
     @include respond-to('mobile-large'){
         width:100%;
-    } 
+    }
 }
 
 /*
@@ -776,7 +776,7 @@ table{
             width:33.333333%;
             padding-left:15px;
             &::after{
-                right:-9px;                       
+                right:-9px;
             }
         }
     }
@@ -788,18 +788,18 @@ table{
     display:block;
     overflow:hidden;
     position:relative;
-    font-size:1.6rem;       
-    > dl { 
+    font-size:1.6rem;
+    > dl {
         display:table;
         table-layout:fixed;
         width:100%;
-        height:auto;  
-        border-top:0;      
+        height:auto;
+        border-top:0;
         border-bottom:1px solid #DDDDDD;
         &:last-child {
             border-bottom:1px solid #999999;
         }
-        > dt {	
+        > dt {
             display:table-cell;
             width:160px;
             background-color:#f8f8f8;
@@ -807,7 +807,7 @@ table{
             text-align:center;
             vertical-align:middle;
         }
-        > dd {	
+        > dd {
             display:table-cell;
             background: #fff;
             padding:0.8rem 1.2rem;
@@ -819,7 +819,7 @@ table{
         > dl{
             display:block;
             > dt {
-                display:block;                
+                display:block;
                 width:100%;
                 background-color:transparent;
                 padding-bottom:0;
@@ -830,7 +830,7 @@ table{
                 width:100%;
             }
         }
-    } 
+    }
 }
 
 .board-write-wrap{
@@ -856,7 +856,7 @@ table{
                    width:40%;
                    @include respond-to('mobile-large'){
                         width:100%;
-                    } 
+                    }
                    label {
                        height:4.4rem;
                        line-height:4.4rem;
@@ -878,7 +878,7 @@ table{
             @include ellipsis(1);
             &::before{
                 content:"";
-                position:relative;               
+                position:relative;
                 display: inline-block;
                 height: 2.8rem;
                 width: 1.6rem;
@@ -904,7 +904,7 @@ table{
                 line-height: 23px;
                 background-color:#fff;
                 border:1px solid #DDDDDD;
-                padding:0 12px;               
+                padding:0 12px;
                 color:#555;
                 font-size:14px;
             }
@@ -915,16 +915,16 @@ table{
             .checkbox-control{
                display:block;
                float:left;
-               max-width:calc(100% - 168px);             
+               max-width:calc(100% - 168px);
                label{
                    display:block;
-               }  
+               }
                .file-name{
                    max-width:100%;
                }
            }
         }
-       
+
     }
 /* board-list-head */
 .board-list-head{
@@ -935,7 +935,7 @@ table{
         font-size:16px;
         @include respond-to('mobile-large') {
             float:none;
-        }   
+        }
         color:#666;
         .total-text{
             font-weight:700;
@@ -968,14 +968,14 @@ table{
         @include respond-to('mobile-large') {
             float:none;
             margin-top:15px;
-        } 
+        }
         .select-box{
             float:left;
             width:150px;
             @include respond-to('mobile-large') {
                 float:none;
                 width:100%;
-            } 
+            }
             &.w180{
                 width: 180px;
             }
@@ -983,7 +983,7 @@ table{
                 width:100%;
                 @include respond-to('mobile-large') {
                     margin-left:0;
-                } 
+                }
             }
             + .select-box{
                 margin-left:10px;
@@ -997,13 +997,13 @@ table{
             width:350px;
             float:left;
             position:relative;
-            padding:0px 80px 0px 10px;    
+            padding:0px 80px 0px 10px;
             @include respond-to('mobile-large') {
                 float:none;
                 width:100%;
                 margin-top:10px;
                 padding:0px 80px 0px 0px;
-            }             
+            }
             button{
                 position:absolute;
                 right:0px;
@@ -1059,7 +1059,7 @@ table{
     clear:both;
     overflow:hidden;
     margin-top:20px;
-    text-align:right;    
+    text-align:right;
     .btn{
         min-width:120px;
         width:auto;
@@ -1067,24 +1067,24 @@ table{
         &:last-child{
             margin-right:0;
         }
-        @include respond-to('mobile-default') {           
-            width:auto;       
-        }         
+        @include respond-to('mobile-default') {
+            width:auto;
+        }
     }
     &.has-btns2{
-        .btn{            
-            @include respond-to('mobile-default') {    
-                float:left;       
+        .btn{
+            @include respond-to('mobile-default') {
+                float:left;
                 width:calc(50% - 4px);
                 margin:0 4px 0 0;
                 &:last-child{
                     margin-right:0;
                 }
-            } 
+            }
         }
     }
-     
-    
+
+
 }
 .title-board-answer{
     display:inline-block;
@@ -1106,11 +1106,11 @@ table{
         background-position: 100% 50%;
         background-size: 18px 18px;
     }
-    
+
 }
 /* board view */
-.board-view-wrap{   
-    border-top:2px solid #354458;    
+.board-view-wrap{
+    border-top:2px solid #354458;
     &:after{
         content:'';
         display:block;
@@ -1122,7 +1122,7 @@ table{
         font-size:22px;
         color:#222;
         padding:23px 20px;
-    } 
+    }
     .board-view-head{
         display:block;
         .board-view-title{
@@ -1132,34 +1132,34 @@ table{
                 min-height:2.2rem;
                 font-size:2.2rem;
                 font-weight:500;
-                color:#222; 
-            }  
+                color:#222;
+            }
             .icon{
                 width:2.2rem;
                 height:2.8rem;
                 background-position:50% 50%;
-                background-size:contain;            }          
+                background-size:contain;            }
         }
         /* board-view-meta */
         .board-view-meta{
             overflow:hidden;
             background-color:#F8F8F8;
             padding:1.6rem 3.0rem;
-            dl { 
+            dl {
                 display:block;
                 float:left;
                 position:relative;
                 margin-right:20px;
                 padding:4px 0;
                 font-size:16px;
-                dt,dd{ 
+                dt,dd{
                     display:block;
                     float:left;
                     position:relative;
-                    line-height:18px; 
+                    line-height:18px;
                 }
                 dt { margin-right:8px;color:#333;font-weight:500;}
-                @include respond-to('mobile-default') {   
+                @include respond-to('mobile-default') {
                     .board-view-meta{padding:8px;}
                     .board-view-meta dl { margin-right:8px;}
                     .board-view-meta dt { margin-right:4px;}
@@ -1171,7 +1171,7 @@ table{
         /*border-top:2px solid #767676;
         border-bottom:1px solid #767676;*/
         border-width:0 0 0 0;
-        /* board-view-content */       
+        /* board-view-content */
         .board-view-content{
             border-top:1px solid #999999;
             border-bottom:1px solid #999999;
@@ -1196,7 +1196,7 @@ table{
                     + dl{
                         margin-top:10px;
                     }
-                }                
+                }
                 dt{
                     padding:28px 40px;
                     font-size:18px;
@@ -1205,13 +1205,13 @@ table{
                     border-bottom:1px solid #ddd;
                     @include respond-to('mobile-default') {
                         padding:20px;
-                    } 
+                    }
                 }
                 dd{
                     padding:28px 40px;
                     @include respond-to('mobile-default') {
                         padding:20px;
-                    } 
+                    }
                 }
             }
             .result-wrap{
@@ -1245,17 +1245,17 @@ table{
                     text-align:right;
                 }
             }
-        }        
-    }    
+        }
+    }
 }
-.board-write-wrap{   
+.board-write-wrap{
     border-top:2px solid #354458;
 }
 .board-btn-wrap{
     overflow:hidden;
     margin-top:20px;
     text-align:right;
-    a{            
+    a{
         width:120px;
         @include respond-to('mobile-default') {
             width:auto;
@@ -1287,7 +1287,7 @@ table{
                 width:2px;
                 height:14px;
                 background-color:#C4C4C4;
-            }                
+            }
         }
         dd a{
             display:block;
@@ -1371,10 +1371,10 @@ table{
                         background-color:#aaa;
                     }
                     &:last-child::after{
-                        display:none;                  
+                        display:none;
                     }
                 }
-            }            
+            }
         }
     }
     .answer-view-body{
@@ -1388,10 +1388,10 @@ table{
 
 /* thumb list */
 .board-image-wrap{
-    
+
     margin-top:20px;
-    .board-image-list{   
-        overflow:hidden;     
+    .board-image-list{
+        overflow:hidden;
         width:calc(100% + 3.0rem);
         margin:0 -1.5rem;
         padding:0 0;
@@ -1400,7 +1400,7 @@ table{
             float:left;
             padding:1.5rem;
             @include respond-to('mobile-large') {
-                width:50%;                
+                width:50%;
             }
             @include respond-to('mobile-default') {
                 width:100%;
@@ -1419,7 +1419,7 @@ table{
                         width:100%;
                         height:auto;
                         min-height:100%;
-                    }                    
+                    }
                 }
                 .txt-wrap{
                     padding:2.0rem;
@@ -1440,7 +1440,7 @@ table{
             a{
                 display:block;
             }
-        }        
+        }
     }
 }
 
@@ -1450,7 +1450,7 @@ table{
     margin-top:20px;
     ul{
         margin-left:-10px;
-        li{            
+        li{
             width:20%;
             float:left;
             padding-left:10px;
@@ -1477,7 +1477,7 @@ table{
                     z-index:1;
                     text-align:center;
                     background-color:rgba(0,0,0,.7);
-                    span{                        
+                    span{
                         position:relative;
                         display:inline-block;
                         a{
@@ -1526,21 +1526,21 @@ table{
                 }
             }
         }
-        @include respond-to('mobile-large'){            
+        @include respond-to('mobile-large'){
             ul li{
                 width:50%;
                 .img{
                     border:0;
                     height:430px;
                 }
-                
+
             }
-        } 
-        @include respond-to('mobile-default'){            
+        }
+        @include respond-to('mobile-default'){
             ul li .img{
-                height:calc(12px + 50vw);               
+                height:calc(12px + 50vw);
             }
-        } 
+        }
     }
 }
 
@@ -1548,12 +1548,12 @@ table{
 .faq-list-wrap{
     margin-top:20px;
     border-top:2px solid #354458;
-    @include respond-to('mobile-large'){     
-        overflow-y:auto;       
+    @include respond-to('mobile-large'){
+        overflow-y:auto;
         ul{
-            width:1000px;       
+            width:1000px;
         }
-    } 
+    }
     li{
         background-color:#fff;
         border-bottom:1px solid #ddd;
@@ -1586,8 +1586,8 @@ table{
                 }
                 &.subject{
                     width:auto;
-                    color:#222;  
-                    text-align:left;                 
+                    color:#222;
+                    text-align:left;
                 }
             }
         }
@@ -1606,7 +1606,7 @@ table{
                 dt{
                     color:#354458;
                     font-weight:700;
-                }                
+                }
                 dd{
                     margin-top:5px;
                     line-height:24px;
@@ -1618,11 +1618,11 @@ table{
                 display:block;
             }
             div{
-                &.link a{                
+                &.link a{
                     background:url(/humanframe/global/assets/image/ico/ico_arrow03_on.png) no-repeat center center;
                 }
             }
-        } 
+        }
     }
 }
 
@@ -1657,13 +1657,13 @@ table{
             width:29px;
             height:64px;
             background-repeat:no-repeat;
-            background-position:center center;           
+            background-position:center center;
         }
         &.swiper-button-disabled{
             opacity: 0.5;
         }
     }
-    
+
 }
 .photo-thumb-slide-wrap{
     width:100%;
@@ -1704,7 +1704,7 @@ table{
     margin: 40px auto 0px auto;
     text-align: center;
     font-size: 0;
-  
+
     a{
       display: inline-block;
       color: #666;
@@ -1717,20 +1717,20 @@ table{
       margin: 0 2px;
       box-sizing: border-box;
       border: 1px solid #ddd;
-  
+
       &:hover {
         background-color: #354458;
         border: 1px solid #354458;
         color:#fff;
       }
-  
+
       &.active {
         background-color: #fff;
         border: 1px solid #354458;
         color:#191919;
         font-weight:400;
       }
-  
+
       &.com, &.m-prev, &.m-next {
         background-color: #fff;
         background-repeat: no-repeat;
@@ -1740,65 +1740,65 @@ table{
         margin-left: 4px;
         border: 1px solid #ddd;
       }
-  
+
       &.com {
         &.first {
           background-image: url(/humanframe/global/assets/image/ico/ico_page_prev_last.png);
           margin-left: 0;
         }
-  
+
         &.prev {
           margin-right: 10px;
         }
-  
+
         &.next {
           margin-left: 10px;
         }
-  
+
         &.prev {
           background-image: url(/humanframe/global/assets/image/icon/ico_board_paginate_prev.svg);
         }
       }
-  
+
       &.m-prev {
         background-image: url(/humanframe/global/assets/image/icon/ico_board_paginate_prev.svg);
       }
-  
+
       &.com.next, &.m-next {
         background-image: url(/humanframe/global/assets/image/icon/ico_board_paginate_next.svg);
       }
-  
+
       &.com {
         &.last {
           background-image: url(/humanframe/global/assets/image/ico/ico_page_next_last.png);
         }
-  
+
         &:hover {
           background-color: #f7f7f7;
         }
       }
-  
+
       &.first:not(.com) {
         overflow: hidden;
         background: url(/humanframe/global/assets/image/ico/ico_page_prev_last.png) no-repeat 50% 50%;
         border: 1px solid #333333;
         text-indent: -9999999999999999999px;
       }
-  
+
       &.prev:not(.com) {
         overflow: hidden;
         background: url(/humanframe/global/assets/image/ico/ico_page_prev.png) no-repeat 50% 50%;
         border: 1px solid #333333;
         text-indent: -9999999999999999999px;
       }
-  
+
       &.next:not(.com) {
         overflow: hidden;
         background: url(/humanframe/global/assets/image/ico/ico_page_next.png) no-repeat 50% 50%;
         border: 1px solid #333333;
         text-indent: -9999999999999999999px;
       }
-  
+
       &.last:not(.com) {
         overflow: hidden;
         background: url(/humanframe/global/assets/image/ico/ico_page_next_last.png) no-repeat 50% 50%;
@@ -1806,11 +1806,11 @@ table{
         text-indent: -9999999999999999999px;
       }
     }
-  
+
     .num-page-total {
       display: none;
     }
-  
+
     a {
       &.m-prev, &.m-next {
         display: none;
@@ -1865,7 +1865,7 @@ table{
             display: inline-block;
             }
         }
-    } 
+    }
 }
 
 /* password popup */
@@ -1940,10 +1940,10 @@ table{
 .layer-popup-wrap{
     display:none;
     position:absolute;
-    left:50% !important;  
+    left:50% !important;
     top:50% !important;
     transform: translate(-50%, -50%);
-    width:600px;     
+    width:600px;
     //margin-left:-300px;
     z-index:1001;
     @include respond-to('mobile-large') {
@@ -1969,13 +1969,13 @@ table{
         }
     }
     .layer-popup-body{
-        background-color:#fff;       
-        padding:20px 20px 40px 20px; 
+        background-color:#fff;
+        padding:20px 20px 40px 20px;
         @include respond-to('mobile-large') {
             iframe{
                 width:100% !important
             }
-        }      
+        }
         &.is-scroll{
             height:500px;
             overflow-y:auto;
@@ -1991,7 +1991,7 @@ table{
                 padding-top:30px;
                 border-top:1px solid #ddd;
                 dt{
-                    padding-left:0;                    
+                    padding-left:0;
                 }
             }
             dt{
@@ -2015,7 +2015,7 @@ table{
                     color:#fff;
                     font-weight:700;
                     border-radius:14px;
-                }  
+                }
             }
             dd{
                 text-align:center;
@@ -2106,7 +2106,7 @@ table{
             position:absolute;
             left:260px;
         }
-        
+
     }
     .pos3{
         position:absolute;
@@ -2121,7 +2121,7 @@ table{
         .text2{
             position:absolute;
             left:260px;
-        }        
+        }
     }
     .pos4{
         position:absolute;
@@ -2140,7 +2140,7 @@ table{
         .text3{
             position:absolute;
             left:260px;
-        }        
+        }
     }
 }
 
@@ -2158,7 +2158,7 @@ table{
     z-index: 1001;
     -webkit-box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
             box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2);
-   
+
     .popup-head {
         font-weight: 500;
         font-size: 2.0rem;
@@ -2170,7 +2170,7 @@ table{
     }
     .popup-content {
         min-width:320px;
-        background-color:#fff;    
+        background-color:#fff;
         padding: 30px 40px;
         text-align:center;
         .label-title{
@@ -2191,7 +2191,7 @@ table{
             display:block;
             text-align:center;
             padding:10px 0;
-            .btn {   
+            .btn {
                 background-color:#354458;
             }
         }
@@ -2201,7 +2201,7 @@ table{
             line-height: 1.5;
         }
     }
-    
+
     .btn-close-popup{
         display:block;
         position:absolute;
@@ -2324,11 +2324,11 @@ table{
 
 // 달력 fullcalendar custom
 .fullcalendar-wrap{
-    .fc-toolbar-chunk {       
+    .fc-toolbar-chunk {
         .fc-button{
             display: inline-block;
-            /*width: 40px; */   
-            height: 40px;    
+            /*width: 40px; */
+            height: 40px;
             //text-indent: -9999px;
             border: 1px solid #ddd;
             background-color:#fff;
@@ -2344,7 +2344,7 @@ table{
             }
             &.fc-next-button {
                 //background-image: url(/humanframe/theme/portal2/assets/image/icon/arrow_btn.png);
-                //background-position:-28px center;                
+                //background-position:-28px center;
             }
             */
             &.fc-today-button {
@@ -2359,10 +2359,10 @@ table{
             }
             &:hover,
             &:focus{
-                color:#fff;  
+                color:#fff;
                 .fc-icon{
-                    color:#fff;  
-                }              
+                    color:#fff;
+                }
             }
             &:disabled{
                 background-color:#fff;
@@ -2371,18 +2371,18 @@ table{
             }
         }
     }
-    .fc-toolbar-title { 
+    .fc-toolbar-title {
         font-size:2.4rem;
         font-weight:600;
         color: #191919;
     }
-    
+
     .fc-view-harness{
         border-top: 1px solid #354458;
     }
-    .fc-col-header{        
+    .fc-col-header{
         .fc-col-header-cell{
-            background-color: #F5F7FB;            
+            background-color: #F5F7FB;
             height: 44px;
             font-size: 16px;
             font-weight: 500;
@@ -2553,7 +2553,7 @@ table{
                             margin-top:10px;
                         }
                     }
-                }                
+                }
                 dl{
                     float:left;
                     width:33.333333%;
@@ -2563,7 +2563,7 @@ table{
                         display:inline-block;
                         padding:4px 6px 3px 25px;
                         background-color:#F4F4F4;
-                        background-position:6px center;   
+                        background-position:6px center;
                         background-repeat:no-repeat;
                         border-radius:4px;
                     }

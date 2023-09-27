@@ -2,15 +2,20 @@ package com.gnuboard.demo.board.domain;
 
 
 import com.gnuboard.demo.common.domain.BaseEntity;
+import com.gnuboard.demo.user.domain.Member;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Builder
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class BoardPost extends BaseEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +28,13 @@ public class BoardPost extends BaseEntity {
     @Column(name="bp_content")
     private String content;
 
+    @Column(name = "bp_writer")
+    private String writer;
+
+    @JoinColumn(name = "member_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Member member;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bs_id")
     private BoardSettings boardSettings;
@@ -30,7 +42,6 @@ public class BoardPost extends BaseEntity {
 
     @OneToMany(mappedBy = "boardPost")
     private List<PostFile> postFileList = new ArrayList<>();
-
 
     @Override
     public String toString() {

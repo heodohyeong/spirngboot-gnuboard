@@ -2,10 +2,13 @@ package com.gnuboard.demo.board.domain;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PostFile {
 
     @Id

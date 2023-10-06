@@ -155,8 +155,14 @@
             <!-- header-link-wrap -->
             <div class="header-link-wrap">
                 <ul class="login-link">
-                    <li><a th:href="@{/member/login}">로그인</a></li>
-                    <li><a href="#">회원가입</a></li>
+                    <th:block th:if="${userId != null}">
+                        <li th:text="${userId}"></li>
+                    </th:block>
+                    <th:block th:unless="${userId != null}">
+                        <li><a th:href="@{/member/login}">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                    </th:block>
+
                 </ul>
                 <div class="header-foreign-wrap">
                     <button type="button" class="btn-foreign">

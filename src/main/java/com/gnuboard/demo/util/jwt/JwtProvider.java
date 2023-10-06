@@ -9,6 +9,8 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import jakarta.annotation.PostConstruct;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,9 +23,11 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
+@Slf4j
 public class JwtProvider {
 
 
+    @Value("${jwt.secret_key}")
     private String secretKey = "";
 
     //토큰 유효시간 30분
@@ -34,18 +38,23 @@ public class JwtProvider {
 
     @PostConstruct
     protected void init(){
+        log.info("secretKey : {}" ,secretKey);
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
+        log.info("secretKey 암호화 : {}" ,secretKey);
     }
 
     public String createToken(String userId , List<String> roles){
         Claims claims = Jwts.claims().setSubject(userId);
-        claims.put("role" , roles);
+        if(roles != null){
+            claims.put("role" , roles);
+        }
         Date now = new Date();
         return Jwts.builder()
                 .setClaims(claims)//정보저장
                 .setIssuedAt(now) // 토큰 발행 시간 정보
                 .setExpiration(new Date(now.getTime()+tokenValidTime)) //만료시간
-                .signWith(SignatureAlgorithm.ES256,secretKey) // 암호화 알고리즘
+                //.signWith(SignatureAlgorithm.ES256,secretKey) // 암호화 알고리즘
+                .signWith(SignatureAlgorithm.HS256,secretKey) // 암호화 알고리즘
                 .compact();
 
 
@@ -57,7 +66,7 @@ public class JwtProvider {
     }
 
     public String getUserId(String token){
-        return Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJwt(token).getBody().getSubject();
+        return Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token).getBody().getSubject();
     }
 
 

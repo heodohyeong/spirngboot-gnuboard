@@ -2,6 +2,7 @@ package com.gnuboard.demo.board.controller;
 
 
 import com.gnuboard.demo.board.domain.BoardPost;
+import com.gnuboard.demo.board.dto.BoardPostDto;
 import com.gnuboard.demo.board.service.BoardPostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +14,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -35,6 +37,16 @@ public class BoardPostController {
         model.addAttribute("post", page);
         model.addAttribute("searchBpId", bpId);
         return "board/board1";
+    }
+
+
+    @GetMapping("/board1/form")
+    public String form(Model model ){
+
+        BoardPostDto boardPostDto = new BoardPostDto();
+
+        model.addAttribute("boardPostDto", boardPostDto);
+        return "board/form";
     }
 
 

@@ -43,4 +43,6 @@ logging:
   config: classpath:logback-spring.xml
 
 
-
+jwt:
+  secret_key: gnuboardgnuboardgnuboardgnuboard
+  cookie_name: bearerToken

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base-layout}"
+      layout:fragment="Content">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!-- board-wrap -->
+<div class="board-wrap">
+    <!-- board-write-wrap -->
+    <div class="board-write-wrap">
+        <div class="board-item-group">
+            <!--<dl>
+                <dt>
+                    <label for="inputText1"><span class="is-required">회원 ID <span class="hd-element">필수입력</span></span></label>
+                </dt>
+                <dd>
+                    <div class="input-box-wrap is-id">
+                        <input type="text" id="inputText1" name="" class="input-control">
+                        <a href="#" class="btn is-green is-fs14">아이디 중복확인</a>
+                    </div>
+                    <div class="form-info">※ 4~10자 이내 영문이나 숫자</div>
+                </dd>
+            </dl>-->
+            <dl>
+                <dt>
+                    <label for="inputTextSubject"><span class="is-required">제목<span class="hd-element">필수입력</span></span></label>
+                </dt>
+                <dd>
+                    <div class="input-box-wrap wfull">
+                        <input type="text" id="inputTextSubject" name="" class="input-control">
+                    </div>
+
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <label for="inputTextName"><span class="is-required">작성자<span class="hd-element">필수입력</span></span></label>
+                </dt>
+                <dd>
+                    <div class="input-box-wrap">
+                        <input type="text" id="inputTextName" name="" class="input-control">
+                    </div>
+                    <div class="form-info">
+                        (본 게시판은 실명으로만 글을 쓰실 수 있습니다.)
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <label for="inputText2"><span class="is-required">비밀번호<span class="hd-element">필수입력</span></span></label>
+                </dt>
+                <dd>
+                    <div class="input-box-wrap">
+                        <input type="text" id="inputText2" name="" class="input-control">
+                    </div>
+                    <div class="form-info">
+                        ※ 비밀번호는 영문 대소문자와 숫자, 특수문자를 조합해서 10자 이상으로 사용하셔야 하며<br>주기적(최소 6개월)으로 변경하셔야 합니다.
+                    </div>
+                </dd>
+            </dl>
+            <!--<dl>
+                <dt>
+                    <span class="is-required is-none">E-mail</span>
+                </dt>
+                <dd>
+                    <div class="email-box-wrap">
+                        <div class="inner">
+                            <label for="inputText3" class="hd-element">이메일을 입력해주세요</label>
+                            <input type="text" id="inputText3" name="" class="input-control">
+                        </div>
+                        <div class="inner">
+                            <label for="inputText4" class="hd-element">메일 계정을 입력해주세요</label>
+                            <input type="text" id="inputText4" name="" class="input-control">
+                        </div>
+                    </div>
+                    <div class="form-group is-inline">
+                        <select name="" id="" class="select-control">
+                            <option value="">선택해주세요</option>
+                        </select>
+                    </div>
+                </dd>
+            </dl>-->
+            <dl>
+                <dt>
+                    <span class="is-required is-none">공개여부</span>
+                </dt>
+                <dd>
+                    <div class="form-group is-inline">
+                        <div class="radio-control">
+                            <input type="radio" id="radioText1" name="r1">
+                            <label for="radioText1">텍스트1</label>
+                        </div>
+                    </div>
+                    <div class="form-group is-inline">
+                        <div class="radio-control">
+                            <input type="radio" id="radioText2" name="r1">
+                            <label for="radioText2">텍스트2</label>
+                        </div>
+                    </div>
+                    <div class="form-info">
+                        (각종 문화정보 이용혜택이 부여됩니다.)
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span class="is-required is-none">휴대폰 입력</span>
+                </dt>
+                <dd>
+                    <div class="phone-input-group-wrap">
+                        <div class="input-wrap">
+                            <label for="input-phone01" class="hd-element">휴대폰 첫번째자리 입력</label>
+                            <input type="text" id="input-phone01" name="" class="input-control">
+                        </div>
+                        <div class="input-wrap">
+                            <label for="input-phone02" class="hd-element">휴대폰 두번째자리 입력</label>
+                            <input type="text" id="input-phone02" name="" class="input-control">
+                        </div>
+                        <div class="input-wrap">
+                            <label for="input-phone03" class="hd-element">휴대폰 마지막자리 입력</label>
+                            <input type="text" id="input-phone03" name="" class="input-control">
+                        </div>
+                    </div>
+                    <div class="form-info">
+                        (각종 문화정보 이용혜택이 부여됩니다.)
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span class="is-required is-none">우편번호</span>
+                </dt>
+                <dd>
+                    <div class="address-input-group">
+                        <div class="address-zipcode-wrap">
+                            <label for="" class="hd-element">우편번호를 입력하세요</label>
+                            <input type="input" id="" name="" class="input-control input-zipcode">
+                            <a href="#" class="btn btn-search">우편번호 검색</a>
+                        </div>
+                        <div class="address-text-wrap">
+                            <label for="input-address01" class="hd-element">주소를 입력하세요</label>
+                            <input type="text" id="" name="" class="input-control input-address01" placeholder="주소">
+                            <label for="input-address02" class="hd-element">상세주소를 입력하세요</label>
+                            <input type="text" id="" name="" class="input-control input-address02" placeholder="상세주소">
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span class="is-required is-none">체크박스</span>
+                </dt>
+                <dd>
+                    <div class="form-group is-inline">
+                        <div class="checkbox-control">
+                            <input type="checkbox" id="c1">
+                            <label for="c1">체크박스1</label>
+                        </div>
+                    </div>
+                    <div class="form-group is-inline">
+                        <div class="checkbox-control">
+                            <input type="checkbox" id="c2">
+                            <label for="c2">체크박스2</label>
+                        </div>
+                    </div>
+                    <div class="form-group is-inline">
+                        <div class="checkbox-control">
+                            <input type="checkbox" id="c3">
+                            <label for="c3">체크박스3</label>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span class="is-required is-none">셀렉트 박스</span>
+                </dt>
+                <dd>
+                    <div class="select-wrap">
+                        <select name="" id="" class="select-control">
+                            <option value="">선택해주세요</option>
+                        </select>
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span class="is-required is-none">텍스트 입력</span>
+                </dt>
+                <dd>
+                    <textarea id="" name="" class="input-control is-textarea"></textarea>
+                    <div class="form-info is-block mt-10">
+                        예시) 지하1층 노래방 100m², 2층 사무실 100m², 3층 주택100m²
+                    </div>
+                </dd>
+            </dl>
+            <dl>
+                <dt>
+                    <span class="is-required is-none">파일첨부</span>
+                </dt>
+                <dd>
+                    <div class="file-box-wrap">
+                        <input type="text" class="input-control" disabled="disabled">
+                        <input type="file" id="f1" name="">
+                        <label for="f1">찾아보기</label>
+                    </div>
+                </dd>
+            </dl>
+        </div>
+        <!--// write -->
+    </div>
+    <!--// board-write-wrap -->
+
+    <!-- board-btn-wrap -->
+    <div class="board-btn-wrap">
+        <a href="#" class="btn is-black">수정</a>
+        <a href="#" class="btn is-gray">삭제</a>
+        <a href="#" class="btn is-outline">목록</a>
+    </div>
+    <!--// board-btn-wrap -->
+</div>
+<!--// board-wrap -->
+
+
+</body>
+</html>

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.time.LocalDateTime;
@@ -17,9 +18,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-//@SpringBootTest
+@SpringBootTest
 @ActiveProfiles("test")
-@DataJpaTest
+//@DataJpaTest
 class BoardSettingRepositoryTest {
 
     @Autowired
@@ -30,6 +31,10 @@ class BoardSettingRepositoryTest {
 
     @Autowired
     EntityManager em;
+
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Test
     @DisplayName("jpa 테스트")
@@ -116,6 +121,28 @@ System.out.println(list);
 
 
         }
+    }
+
+
+    @Test
+    public void test(){
+        String pwd = "qwer1234!@";
+        String pwd2 = "qwer1234!";
+
+        String encodePwd = bCryptPasswordEncoder.encode(pwd);
+        //$2a$10$4jJCypizwOFiOyktJ4jkHOl8aEN8QMHPSgBmTUPBxG9bI9rfWzscu
+        //$2a$10$rNENfHjT5sK4jDkEgfX7duoRRE.hYWXSmzM6X5hYa70Sj5knO4JGW
+        //$2a$10$B1L8ke.l9Et4xJbat4evku0zjFer36lstSbvw8QBeh8ZlEurK4CJe
+        System.out.println(encodePwd);
+        System.out.println(bCryptPasswordEncoder.matches( pwd, "$2a$10$4jJCypizwOFiOyktJ4jkHOl8aEN8QMHPSgBmTUPBxG9bI9rfWzscu"));
+        System.out.println(bCryptPasswordEncoder.matches( pwd, "$2a$10$rNENfHjT5sK4jDkEgfX7duoRRE.hYWXSmzM6X5hYa70Sj5knO4JGW"));
+        System.out.println(bCryptPasswordEncoder.matches( pwd, "$2a$10$B1L8ke.l9Et4xJbat4evku0zjFer36lstSbvw8QBeh8ZlEurK4CJe"));
+
+        System.out.println(bCryptPasswordEncoder.matches( pwd2, "$2a$10$4jJCypizwOFiOyktJ4jkHOl8aEN8QMHPSgBmTUPBxG9bI9rfWzscu"));
+        System.out.println(bCryptPasswordEncoder.matches( pwd2, "$2a$10$rNENfHjT5sK4jDkEgfX7duoRRE.hYWXSmzM6X5hYa70Sj5knO4JGW"));
+        System.out.println(bCryptPasswordEncoder.matches( pwd2, "$2a$10$B1L8ke.l9Et4xJbat4evku0zjFer36lstSbvw8QBeh8ZlEurK4CJe"));
+
+
     }
 
 }

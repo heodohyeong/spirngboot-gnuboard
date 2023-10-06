@@ -8,20 +8,29 @@
     <title>login</title>
 </head>
 <body>
+<script>
+    function fn_submit(){
+        $("#frmLogin").submit();
+    }
+
+
+</script>
 <div class="member-form">
     <div class="member-div mypage">
         <h2>로그인</h2>
         <div class="member-text">
             <p>사이트 방문해주셔서 감사합니다.<br/>로그인하시면 보다 편리하게 서비스 이용이 가능합니다.</p>
         </div>
-        <form  class="login-form" id="frmLogin" name="frmLogin" method="post" action="./loginAction" >
+<!--        th:action="@{/member/loginAction}"-->
+<!--        <form class="login-form" id="frmLogin" name="frmLogin" method="post" action="/member/loginAction" th:object="${loginDto}">-->
+        <form class="login-form" id="frmLogin" name="frmLogin" method="post" th:action="@{/member/loginAction}" th:object="${loginDto}">
             <div class="form-group">
-                <label for="mbrId" class="hd-element">아이디입력</label>
-                <input id="mberId" name="mberId"  type="text" value="" class="input-control" autocomplete="off" placeholder="아이디">
+                <label for="userId" class="hd-element">아이디입력</label>
+                <input th:field="*{userId}" id="userId" name="userId"  type="text" value="" class="input-control" autocomplete="off" placeholder="아이디">
             </div>
             <div class="form-group">
                 <label for="password" class="hd-element">비밀번호입력</label>
-                <input id="password" name="password" type="password" value="" class="input-control" autocomplete="off" placeholder="비밀번호">
+                <input th:field="*{password}" id="password" name="password" type="password" value="" class="input-control" autocomplete="off" placeholder="비밀번호">
             </div>
             <div class="checkbox-control">
                 <input type="checkbox" id="rememberme" name="rememberme" >
@@ -32,8 +41,8 @@
                 <button id="submitTmp" type="submit" style="display:none;" />
             </div>
             <ul class="login-list">
-<!--                <li><a href="./findId">아이디 찾기</a></li>-->
-<!--                <li><a href="./findPw">비밀번호 찾기</a></li>-->
+                <li><a href="./findId">아이디 찾기</a></li>
+                <li><a href="./findPw">비밀번호 찾기</a></li>
                 <li><a href="./signup">회원가입</a></li>
             </ul>
         </form>

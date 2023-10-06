@@ -26,4 +26,11 @@ public class MemberService {
         return memberDto;
     }
 
+    public MemberDto findByUserId(String userId) {
+        Member member =  memberRepository.findByUserId(userId)
+                .orElseThrow(() -> new UsernameNotFoundException("사용자를 찾을 수 없습니다."));
+        MemberDto memberDto = modelMapper.map(member , MemberDto.class);
+        return memberDto;
+    }
+
 }

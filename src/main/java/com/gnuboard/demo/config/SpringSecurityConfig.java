@@ -1,6 +1,7 @@
 package com.gnuboard.demo.config;
 
 
+import com.gnuboard.demo.util.jwt.filter.JwtFilter;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Bean;
@@ -11,8 +12,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import static org.springframework.security.config.Customizer.withDefaults;
@@ -24,7 +27,7 @@ public class SpringSecurityConfig {
 
     //private final JwtTokenProvider jwtTokenProvider;
 
-
+    private final JwtFilter jwtFilter;
 
     @Bean
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -50,8 +53,12 @@ public class SpringSecurityConfig {
                             formLoginConfig.loginPage("/member/login").defaultSuccessUrl("/index")
                         )
 
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+
 
         ;
+        //하위 쓰레드에도 SecurityContextHolder 공유 설정
+        SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
         return http.build();
     }
 
@@ -60,6 +67,14 @@ public class SpringSecurityConfig {
 //        return (web) -> web.ignoring().requestMatchers(new AntPathRequestMatcher("/h2-console/**"));
 //    }
 
+
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer(){
+        return (web) -> web.ignoring().requestMatchers(
+                new AntPathRequestMatcher("/portal2/**"),
+                new AntPathRequestMatcher("/global/**")
+        );
+    }
 
     @Bean
     public BCryptPasswordEncoder encoderPassword(){

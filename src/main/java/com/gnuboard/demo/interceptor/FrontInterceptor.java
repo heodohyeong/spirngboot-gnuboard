@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -43,7 +45,10 @@ public class FrontInterceptor implements HandlerInterceptor {
                         //토큰 만료
                         log.info("만료된 토큰입니다.");
                     }else{
-                        request.setAttribute("userId",jwtProvider.getUserId(value));
+                        String userId = jwtProvider.getUserId(value);
+                        request.setAttribute("userId",userId);
+                        Authentication authentication = jwtProvider.getAuthentication(value);
+                        SecurityContextHolder.getContext().setAuthentication(authentication);
                     }
                 }
             }

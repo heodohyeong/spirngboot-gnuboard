@@ -14,4 +14,6 @@ public interface BoardPostRepository extends JpaRepository<BoardPost, Long> {
     Page<BoardPost> findById(int bsId, Pageable pageable);
 
     Page<BoardPost> findByBoardSettings_Id(int bsId, Pageable pageable);
+
+    BoardPost save(BoardPost boardPost);
 }

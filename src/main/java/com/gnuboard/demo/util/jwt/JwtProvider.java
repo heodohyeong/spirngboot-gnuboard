@@ -1,7 +1,10 @@
 package com.gnuboard.demo.util.jwt;
 
 
+import com.gnuboard.demo.user.adaptor.MemberAdaptor;
+import com.gnuboard.demo.user.domain.Member;
 import com.gnuboard.demo.user.repository.MemberRepository;
+import com.gnuboard.demo.user.service.CustomMemberDetailService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
@@ -36,6 +39,8 @@ public class JwtProvider {
 
     private final UserDetailsService userDetailsService ;
 
+    private final CustomMemberDetailService customMemberDetailService;
+
     @PostConstruct
     protected void init(){
         log.info("secretKey : {}" ,secretKey);
@@ -61,8 +66,10 @@ public class JwtProvider {
     }
 
     public Authentication getAuthentication(String token){
-        UserDetails userDetails = userDetailsService.loadUserByUsername(this.getUserId(token));
-        return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
+        //UserDetails userDetails = userDetailsService.loadUserByUsername(this.getUserId(token));
+        MemberAdaptor memberAdaptor = (MemberAdaptor) customMemberDetailService.loadUserByUsername(this.getUserId(token));
+
+        return new UsernamePasswordAuthenticationToken(memberAdaptor, token, memberAdaptor.getAuthorities());
     }
 
     public String getUserId(String token){

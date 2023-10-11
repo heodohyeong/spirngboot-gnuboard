@@ -24,4 +24,8 @@ public class BoardPostService {
         return boardPostRepository.findByBoardSettings_Id(bsId,pageable);
     }
 
+    public BoardPost insertBoard(BoardPost boardPost){
+        return boardPostRepository.save(boardPost);
+    }
+
 }

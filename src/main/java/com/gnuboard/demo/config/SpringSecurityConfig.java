@@ -58,7 +58,10 @@ public class SpringSecurityConfig {
 
         ;
         //하위 쓰레드에도 SecurityContextHolder 공유 설정
-        SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
+        //2023-10-12 설정사용시  @AuthenticationPrincipal 의 객체가 null 값으로 넘어옴
+        //SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
+        //SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_GLOBAL);
+        SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_THREADLOCAL); //default
         return http.build();
     }
 
@@ -68,6 +71,7 @@ public class SpringSecurityConfig {
 //    }
 
 
+    //정적리소스는 filter를 거치지 않기 위해 설정
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer(){
         return (web) -> web.ignoring().requestMatchers(

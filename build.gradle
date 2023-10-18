@@ -68,6 +68,24 @@ dependencies {
 
     //valid
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '3.1.2'
+
+
+
+    //파일업로드
+    // https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
+    //implementation group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
+
+    //JSON 데이터 처리를 위한 dependency
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    //implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.2'
+
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+
+    // https://mvnrepository.com/artifact/commons-io/commons-io
+    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+
+
 }
 
 tasks.named('test') {

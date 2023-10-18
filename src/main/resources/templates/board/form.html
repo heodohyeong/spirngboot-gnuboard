@@ -13,6 +13,12 @@
     function f_submit(){
         $("#boardFrm").submit();
     }
+    function fileCheck(fileInput){
+        //확장자 , 파일사이즈 체크 로직 필요
+        console.log(fileInput.files[0]);
+        console.log(fileInput.files[0].name);
+        $("#filename").val(fileInput.files[0].name);
+    }
 
 </script>
 
@@ -214,15 +220,16 @@
                 </dt>
                 <dd>
                     <div class="file-box-wrap">
-                        <input type="text" class="input-control" disabled="disabled">
-                        <input type="file" id="f1" name="f1">
-                        <label for="f1">찾아보기</label>
+                        <input type="text" id="filename" class="input-control" disabled="disabled">
+                        <input type="file" id="file1" name="file" onchange="fileCheck(this)">
+                        <label for="file1">찾아보기</label>
                     </div>
                 </dd>
             </dl>
         </div>
         <!--// write -->
-        </form>
+    </form>
+
     </div>
     <!--// board-write-wrap -->
 

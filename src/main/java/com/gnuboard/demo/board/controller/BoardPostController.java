@@ -9,6 +9,7 @@ import com.gnuboard.demo.board.service.BoardPostService;
 import com.gnuboard.demo.board.service.BoardSettingService;
 import com.gnuboard.demo.user.adaptor.MemberAdaptor;
 import com.gnuboard.demo.user.domain.Member;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.context.SecurityContextHolderStrategy;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -54,10 +61,18 @@ public class BoardPostController {
 
     @GetMapping("/form")
     public String form(Model model, @AuthenticationPrincipal MemberAdaptor memberAdaptor
-                       , Principal principal) {
+                       , Principal principal , HttpServletRequest request
+   ) {
+        log.info("-------------------요청 : {}",request.getRequestURI());
+        SecurityContextHolderStrategy authentication2 = SecurityContextHolder.getContextHolderStrategy();
+        Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
+        log.info("{}",authentication);
+        log.info("{}",authentication.getPrincipal());
+        log.info("authentication2 {}",authentication2);
+        log.info("authentication2 {}",authentication2.getContext().getAuthentication());
 
         if(memberAdaptor != null){
-            log.info("authentication : {}" + memberAdaptor.getMember().getUserId());
+            log.info("authentication : {}" , memberAdaptor.getMember().getUserId());
         }else{
             log.info("authentication : null");
         }
@@ -76,19 +91,28 @@ public class BoardPostController {
 
 
     @PostMapping("/insertBoard")
-    public String insertBoard(@ModelAttribute BoardPostDto boardPostDto, MultipartFile multipartFile
+    public String insertBoard(@ModelAttribute BoardPostDto boardPostDto, @RequestPart(value="file" ,required = false) List<MultipartFile> files
                             ) {
         //
-        BoardSettings boardSettings = boardSettingService.findById(Long.valueOf(1));
+        //BoardSettings boardSettings = boardSettingService.findById(Long.valueOf(1));
 
 
 
-        boardPostDto.setBoardSettings(boardSettings);
+        //boardPostDto.setBoardSettings(boardSettings);
         // 게시글 등!!록
-        BoardPost boardPost = boardPostService.insertBoard(boardPostDto.toEntity());
+        //BoardPost boardPost = boardPostService.insertBoard(boardPostDto.toEntity());
         //log.info("게시글 등록 번호 : {}", boardPost.getId());
         //첨부파일 등록
         //log.info(multipartFile.getName());
+        if(files != null){
+            for(MultipartFile mf : files){
+                log.info(mf.getName());
+                log.info(mf.getOriginalFilename());
+            }
+        }else{
+            log.info("files is null");
+        }
+
         return "redirect:/board1/form";
     }
 }

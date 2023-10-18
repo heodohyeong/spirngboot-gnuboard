@@ -26,9 +26,9 @@ public class FrontInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        log.info("-------------------요청 : {}"+request.getRequestURI());
+        //log.info("-------------------요청 : {}"+request.getRequestURI());
 
-        request.setAttribute("request",request);
+        /*request.setAttribute("request",request);
         Cookie[] cookies = request.getCookies();
 
         if(cookies!=null){
@@ -52,7 +52,7 @@ public class FrontInterceptor implements HandlerInterceptor {
                     }
                 }
             }
-        }
+        }*/
 
 
 

@@ -4,6 +4,8 @@ package com.gnuboard.demo.user.domain;
 import com.gnuboard.demo.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.Super;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +18,7 @@ import java.util.stream.Collectors;
 @Entity
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Member extends BaseEntity{

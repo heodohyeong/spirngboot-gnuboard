@@ -7,6 +7,7 @@ import com.gnuboard.demo.board.domain.QBoardSettings;
 import com.gnuboard.demo.board.dto.BoardPostDto;
 import com.gnuboard.demo.board.service.BoardPostService;
 import com.gnuboard.demo.board.service.BoardSettingService;
+import com.gnuboard.demo.board.service.PostFileService;
 import com.gnuboard.demo.user.adaptor.MemberAdaptor;
 import com.gnuboard.demo.user.domain.Member;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,6 +31,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 
+import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
@@ -43,6 +45,8 @@ public class BoardPostController {
     private final BoardPostService boardPostService;
 
     private final BoardSettingService boardSettingService;
+
+    private final PostFileService postFileService;
 
     @GetMapping("/")
     public String board(Model model
@@ -64,12 +68,12 @@ public class BoardPostController {
                        , Principal principal , HttpServletRequest request
    ) {
         log.info("-------------------요청 : {}",request.getRequestURI());
-        SecurityContextHolderStrategy authentication2 = SecurityContextHolder.getContextHolderStrategy();
+        /*SecurityContextHolderStrategy authentication2 = SecurityContextHolder.getContextHolderStrategy();
         Authentication authentication =  SecurityContextHolder.getContext().getAuthentication();
         log.info("{}",authentication);
         log.info("{}",authentication.getPrincipal());
         log.info("authentication2 {}",authentication2);
-        log.info("authentication2 {}",authentication2.getContext().getAuthentication());
+        log.info("authentication2 {}",authentication2.getContext().getAuthentication());*/
 
         if(memberAdaptor != null){
             log.info("authentication : {}" , memberAdaptor.getMember().getUserId());
@@ -91,16 +95,17 @@ public class BoardPostController {
 
 
     @PostMapping("/insertBoard")
-    public String insertBoard(@ModelAttribute BoardPostDto boardPostDto, @RequestPart(value="file" ,required = false) List<MultipartFile> files
-                            ) {
+    public String insertBoard(@ModelAttribute BoardPostDto boardPostDto, @RequestPart(value="file"
+            ,required = false) List<MultipartFile> files
+            ,@AuthenticationPrincipal MemberAdaptor memberAdaptor) throws IOException {
         //
-        //BoardSettings boardSettings = boardSettingService.findById(Long.valueOf(1));
+        BoardSettings boardSettings = boardSettingService.findById(Long.valueOf(1));
 
 
 
-        //boardPostDto.setBoardSettings(boardSettings);
+        boardPostDto.setBoardSettings(boardSettings);
         // 게시글 등!!록
-        //BoardPost boardPost = boardPostService.insertBoard(boardPostDto.toEntity());
+        BoardPost boardPost = boardPostService.insertBoard(boardPostDto.toEntity());
         //log.info("게시글 등록 번호 : {}", boardPost.getId());
         //첨부파일 등록
         //log.info(multipartFile.getName());
@@ -109,6 +114,7 @@ public class BoardPostController {
                 log.info(mf.getName());
                 log.info(mf.getOriginalFilename());
             }
+            postFileService.uploadFile(files , boardPost, memberAdaptor);
         }else{
             log.info("files is null");
         }

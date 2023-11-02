@@ -4,16 +4,17 @@ package com.gnuboard.demo.board.domain;
 import com.gnuboard.demo.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Builder
+@SuperBuilder
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class BoardFile extends BaseEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +39,12 @@ public class BoardFile extends BaseEntity {
     @Column(name = "bf_filesize")
     private int filesize;
 
-
+    @Column(name = "bf_original_name")
+    private String originalName;
+    @Column(name = "bf_saved_name")
+    private String savedName;
+    @Column(name = "bf_extension_name")
+    private String extensionName;
 
     @OneToOne(mappedBy = "boardFile")
     private PostFile postFile;

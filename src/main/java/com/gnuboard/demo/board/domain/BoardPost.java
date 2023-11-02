@@ -5,13 +5,14 @@ import com.gnuboard.demo.common.domain.BaseEntity;
 import com.gnuboard.demo.user.domain.Member;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Builder
+@SuperBuilder
 @Getter
 @Setter
 @AllArgsConstructor

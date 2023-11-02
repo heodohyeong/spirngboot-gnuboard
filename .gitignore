@@ -19,6 +19,7 @@ bin/
 
 #추가
 **/log
+errorLog.log
 
 ### IntelliJ IDEA ###
 .idea
@@ -38,3 +39,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+errorLog.log
+errorLog.log

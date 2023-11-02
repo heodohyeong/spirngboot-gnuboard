@@ -10,10 +10,12 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,6 +33,9 @@ class BoardSettingRepositoryTest {
 
     @Autowired
     EntityManager em;
+
+    @Autowired
+    private BoardFileRepository boardFileRepository;
 
 
     @Autowired
@@ -59,6 +64,7 @@ System.out.println(list);
 
     @Test
     @DisplayName("데이터 등록 테스트")
+    @Transactional
     public void save_test(){
 
         BoardSettings boardSettings = new BoardSettings();
@@ -68,13 +74,15 @@ System.out.println(list);
         boardSettings.setCreatedBy(Long.valueOf(1));
         //boardSettings.setId(Long.valueOf(1));
 
+
+
         BoardPost boardPost = new BoardPost();
-        boardPost.setTitle("testtest");
-        boardPost.setContent("content");
+        boardPost.setTitle("첨부파일 테스트");
+        boardPost.setContent("첨부파일 테스트 content");
         boardPost.setBoardSettings(boardSettings);
 
         BoardFile boardFile = new BoardFile();
-        boardFile.setContent("123");
+        boardFile.setContent("첨부파일 테스트");
         boardFile.setCreatedAt(LocalDateTime.now());
         boardFile.setDownload(0);
         boardFile.setFilesize(10);
@@ -83,6 +91,9 @@ System.out.println(list);
         postFile.setBoardPost(boardPost);
         postFile.setBoardFile(boardFile);
         postFile.setDelYn("N");
+
+        //
+        boardFile.setPostFile(postFile);
 
         em.persist(boardSettings);
         em.persist(boardPost);
@@ -121,6 +132,18 @@ System.out.println(list);
 
 
         }
+
+
+        System.out.println("************************************************");
+
+        Optional<BoardFile> optionalBoardFile = boardFileRepository.findById(Long.valueOf(1));
+        if(optionalBoardFile.isPresent()){
+            System.out.println(optionalBoardFile.get());
+            System.out.println(optionalBoardFile.get().getPostFile().getId());
+        }else{
+            System.out.println("optionalBoardFile is null");
+        }
+
     }
 
 

@@ -24,7 +24,7 @@ import java.util.Arrays;
 @RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
 
-    String[] excludePath = {"/global", "/portal2"};
+    String[] excludePath = {"/global", "/portal2" , "/humanframe"};
 
     @Value("${jwt.cookie_name}")
     private String jwtCookieName;
@@ -41,11 +41,11 @@ public class JwtFilter extends OncePerRequestFilter {
         Cookie[] cookies = request.getCookies();
 
         if(cookies!=null){
-                                   for (Cookie c : cookies) {
-                  String name = c.getName(); // 쿠키 이름 가져오기
+            for (Cookie c : cookies) {
+                String name = c.getName(); // 쿠키 이름 가져오기
                 String value = c.getValue(); // 쿠키 값 가져오기
                 log.info("name : {}" , name);
-                 log.info("value : {}" , value);
+                log.info("value : {}" , value);
                 if (name.equals(jwtCookieName)) {
                     //  String token = value.split(" ")[1];
                     log.info("token : {}" , value);
@@ -57,12 +57,12 @@ public class JwtFilter extends OncePerRequestFilter {
                         String userId = jwtProvider.getUserId(value);
                         request.setAttribute("userId",userId);
                         Authentication authentication = jwtProvider.getAuthentication(value);
-                        //SecurityContextHolder.getContext().setAuthentication(authentication);
-                        SecurityContextHolder.getContextHolderStrategy().getContext().setAuthentication(authentication);
+                        SecurityContextHolder.getContext().setAuthentication(authentication);
+                        //SecurityContextHolder.getContextHolderStrategy().getContext().setAuthentication(authentication);
 
                     }
                 }
-            }
+           }
         }
 
 
@@ -70,7 +70,7 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request,response);
     }
 
-
+    //정적리소스는 filter를 거치지 않기 위해 설정
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
 

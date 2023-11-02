@@ -4,6 +4,7 @@ package com.gnuboard.demo.board.domain;
 import com.gnuboard.demo.common.domain.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -12,7 +13,7 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public class BoardSettings extends BaseEntity {

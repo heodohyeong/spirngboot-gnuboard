@@ -61,7 +61,7 @@ public class SpringSecurityConfig {
         //2023-10-12 설정사용시  @AuthenticationPrincipal 의 객체가 null 값으로 넘어옴
         //SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLETHREADLOCAL);
         //SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_GLOBAL);
-        SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_THREADLOCAL); //default
+        //SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_THREADLOCAL); //default
         return http.build();
     }
 
@@ -76,7 +76,8 @@ public class SpringSecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer(){
         return (web) -> web.ignoring().requestMatchers(
                 new AntPathRequestMatcher("/portal2/**"),
-                new AntPathRequestMatcher("/global/**")
+                new AntPathRequestMatcher("/global/**"),
+                new AntPathRequestMatcher("/humanframe/**")
         );
     }
 

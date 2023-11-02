@@ -1,3 +1,5 @@
+server:
+  port: 8081
 ##password ?? x
 spring:
   autoconfigure:
@@ -46,3 +48,7 @@ logging:
 jwt:
   secret_key: gnuboardgnuboardgnuboardgnuboard
   cookie_name: bearerToken
+
+file:
+  upload:
+   path: D:/study/gnuFile

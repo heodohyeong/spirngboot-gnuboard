@@ -46,19 +46,21 @@ public class PostFileService {
                 String addPath = getTimeStemp();
                 String originalName = mf.getOriginalFilename();
                 String extension = originalName.substring(originalName.lastIndexOf(".")+1);
+                String stringDate = DateUtil.getDateTimeAsString();
                 log.info("file name : {}",originalName);
                 log.info("file extension : {}",extension);
 
                 String saveName = UUID.randomUUID().toString()+"."+extension;
                 //uploadPath = uploadPath+ File.separator+ DateUtil.getDateTimeAsString();
-                uploadPath = getUploadPath(DateUtil.getDateTimeAsString())+File.separator;
-                        //uploadPath = uploadPath+"/"+ DateUtil.getDateTimeAsString();
+                String customUploadPath = uploadPath+"/"+stringDate+"/";
+                getUploadPath(stringDate);//디렉토리 만들기
+                //uploadPath = getUploadPath(DateUtil.getDateTimeAsString())+"/";
                 log.info("uploadPath : {}" , uploadPath);
-                mf.transferTo(new File(uploadPath+saveName));
+                mf.transferTo(new File(customUploadPath+saveName));
 
 
                 boardFile = BoardFile.builder()
-                        .source(uploadPath)
+                        .source(customUploadPath)
                         .content(mf.getOriginalFilename())
                         .download(0)
                         .createdAt(LocalDateTime.now())

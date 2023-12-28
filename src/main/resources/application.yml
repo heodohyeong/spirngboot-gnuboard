@@ -41,6 +41,13 @@ spring:
         use_sql_comments: true
 #        bytecode:
 #          use_reflection_optimizer: false
+
+## redis 정보
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
 logging:
   config: classpath:logback-spring.xml
 
